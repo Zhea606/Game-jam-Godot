@@ -1111,6 +1111,9 @@ position = Vector2(693.286, 1.1772)
 scale = Vector2(0.992251, 0.992251)
 texture = ExtResource("1_j427n")
 
+[node name="objeto" parent="." instance=ExtResource("12_o7etf")]
+position = Vector2(164, -11)
+
 [node name="CharacterBody2D" parent="." instance=ExtResource("2_5nq85")]
 position = Vector2(48, -17)
 
@@ -1131,6 +1134,7 @@ volume_db = 4.0
 autoplay = true
 
 [node name="Enemie" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(290, -17)
 scale = Vector2(0.100418, 0.100418)
 texture = ExtResource("12_c5ctt")
@@ -1147,6 +1151,3 @@ color = Color(0.12549, 0.12549, 0.12549, 1)
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
 position = Vector2(48, -17)
 color = Color(0.529412, 0.694118, 0.968627, 1)
-
-[node name="Node2D" parent="." instance=ExtResource("12_o7etf")]
-position = Vector2(164, -11)

@@ -118,6 +118,6 @@ texture_scale = 0.17
 
 [node name="notif" type="Sprite2D" parent="."]
 visible = false
-position = Vector2(0, -38)
-scale = Vector2(0.16, 0.16)
+position = Vector2(0, -39)
+scale = Vector2(0.11125, 0.11125)
 texture = ExtResource("6_agqwy")
