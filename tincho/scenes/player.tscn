@@ -1,0 +1,123 @@
+[gd_scene load_steps=12 format=3 uid="uid://de4njslgpw7sc"]
+
+[ext_resource type="Texture2D" uid="uid://bqygu43i28ylo" path="res://assets/character/Character Idle 48x48.png" id="1_mpnvq"]
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_xmsiu"]
+[ext_resource type="Texture2D" uid="uid://bdkdff73gidcl" path="res://assets/character/PlayerWalk 48x48.png" id="3_oqjkb"]
+[ext_resource type="Texture2D" uid="uid://c7wgamsk87svq" path="res://assets/propio/intentodeluz3.png" id="5_8tg2b"]
+[ext_resource type="Texture2D" uid="uid://cadcwbps0lm6u" path="res://assets/propio/notif.png" id="6_agqwy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0nvyd"]
+size = Vector2(15, 29)
+
+[sub_resource type="Animation" id="Animation_103bh"]
+resource_name = "Idle"
+length = 0.9
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8]
+}
+
+[sub_resource type="Animation" id="Animation_4rply"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SpriteWalk:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_nhenh"]
+resource_name = "Walk"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SpriteWalk:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7]
+}
+
+[sub_resource type="Animation" id="Animation_r815k"]
+resource_name = "light"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7dh6i"]
+_data = {
+"Idle": SubResource("Animation_103bh"),
+"RESET": SubResource("Animation_4rply"),
+"Walk": SubResource("Animation_nhenh"),
+"light": SubResource("Animation_r815k")
+}
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("1_xmsiu")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_mpnvq")
+hframes = 10
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 1.5)
+shape = SubResource("RectangleShape2D_0nvyd")
+
+[node name="SpriteWalk" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("3_oqjkb")
+hframes = 8
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+speed_scale = 0.8
+libraries = {
+"": SubResource("AnimationLibrary_7dh6i")
+}
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(3.405, 1.67)
+enabled = false
+color = Color(1, 0.509804, 0.988235, 1)
+energy = 12.07
+shadow_enabled = true
+shadow_color = Color(0, 0, 0, 1)
+shadow_filter = 2
+shadow_filter_smooth = 64.0
+texture = ExtResource("5_8tg2b")
+offset = Vector2(54.125, 0)
+texture_scale = 0.17
+
+[node name="notif" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(0, -38)
+scale = Vector2(0.16, 0.16)
+texture = ExtResource("6_agqwy")
