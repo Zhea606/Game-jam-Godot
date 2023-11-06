@@ -1,7 +1,8 @@
 # Métodos trabajados
 
 * Movimiento horizontal jugador
-´´´extends CharacterBody2D
+```
+extends CharacterBody2D
 
 const moveSpeed = 5
 const maxSpeed = 50
@@ -10,8 +11,6 @@ const up = Vector2(0,-1)
 const gravity = 15
 
 @onready var sprite = $Sprite2D
-@onready var spriteWalking = $SpriteWalk
-@onready var animationPlayer = $AnimationPlayer
 
 func _physics_process(_delta):
 	velocity.y += gravity
@@ -33,4 +32,5 @@ func _physics_process(_delta):
 		if friction:
 			velocity.x = lerp(velocity.x, 0.0, 0.01)
 
-	move_and_slide() ´´´
+	move_and_slide()
+```
