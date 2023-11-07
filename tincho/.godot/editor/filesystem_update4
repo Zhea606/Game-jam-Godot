@@ -1,3 +1,4 @@
 res://scenes/Mundo.tscn
 res://scenes/player.tscn
 res://scenes/objeto1.tscn
+res://scripts/player.gd
