@@ -2,8 +2,7 @@ extends Node
 class_name Movement
 
 
-
-var speed: float = 32
+@export var speed: float = 32
 var max_speed: float = 32
 
 

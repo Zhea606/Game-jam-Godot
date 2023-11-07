@@ -14,7 +14,9 @@ texture = ExtResource("1_gus2l")
 hframes = 9
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(-3, 0)
 shape = SubResource("CapsuleShape2D_k07bb")
 
 [node name="Movement" parent="." instance=ExtResource("3_m3fw5")]
+speed = 40.0
