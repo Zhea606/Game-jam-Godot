@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://b4qlf4fm6c74"]
+[gd_scene load_steps=21 format=3 uid="uid://b4qlf4fm6c74"]
 
 [ext_resource type="Texture2D" uid="uid://dikdyd2e0mdam" path="res://assets/backgrounds/N_b6N3.png" id="1_j427n"]
 [ext_resource type="Texture2D" uid="uid://cg3f415up2euc" path="res://assets/backgrounds/Assets.png" id="1_mfte0"]
@@ -11,8 +11,10 @@
 [ext_resource type="AudioStream" uid="uid://cfbt4hhj2hbyu" path="res://sounds/back-present.ogg" id="4_54ncl"]
 [ext_resource type="Texture2D" uid="uid://dq178otdopbug" path="res://assets/backgrounds/layers/parallax-demon-woods-mid-trees.png" id="4_kfnj0"]
 [ext_resource type="Texture2D" uid="uid://cfrkryvs4vyfc" path="res://assets/backgrounds/layers/parallax-demon-woods-close-trees.png" id="5_17teg"]
+[ext_resource type="Script" path="res://scripts/Camera2D.gd" id="12_8y2gv"]
 [ext_resource type="Texture2D" uid="uid://bf0dmn50jx2jx" path="res://assets/enemies/png-clipart-walk-cycle-animation-pixel-art-sprite-walking-animation-team-human.png" id="12_c5ctt"]
 [ext_resource type="PackedScene" uid="uid://cg6l5q4ht0svk" path="res://scenes/objeto1.tscn" id="12_o7etf"]
+[ext_resource type="Script" path="res://scripts/Enemigo.gd" id="14_gccjd"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_l5yuo"]
 diffuse_texture = ExtResource("3_ychma")
@@ -1045,10 +1047,13 @@ sources/0 = SubResource("TileSetAtlasSource_561iu")
 cull_mode = 2
 polygon = PackedVector2Array(-39.8337, -149.376, -29.8752, -119.501, -39.8337, -69.7088, -49.792, -29.8752, -69.709, -1.52588e-05, -39.8337, 9.95839, -89.6257, 119.501, -109.542, 119.501, -109.542, 139.418, -79.6672, 169.293, -19.9167, 69.7088, 29.8752, 139.418, 0, 159.334, 19.9167, 169.293, 49.792, 149.376, 49.792, 109.542, 9.95825, 49.792, 19.9167, 9.95839, 19.9167, -29.8752, 49.792, 39.8336, 59.7502, 9.95839, 49.792, -29.8752, 49.792, -89.6256, 0, -119.501, 9.95825, -149.376)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ifved"]
+size = Vector2(11, 33)
+
 [node name="Forest" type="Node2D"]
 script = ExtResource("1_tvynm")
-metadata/_edit_vertical_guides_ = [-33.0, 413.0]
-metadata/_edit_horizontal_guides_ = [-126.0]
+metadata/_edit_vertical_guides_ = [-32.0, 612.0, 164.0, 180.0, 0.0]
+metadata/_edit_horizontal_guides_ = [-126.0, 0.0]
 
 [node name="fondo2" type="CanvasGroup" parent="."]
 position = Vector2(451, -48)
@@ -1098,7 +1103,7 @@ visible = false
 position = Vector2(0, -1)
 tile_set = SubResource("TileSet_7agih")
 format = 2
-layer_0/tile_data = PackedInt32Array(65534, 196608, 7, 65535, 196608, 7, 0, 196608, 7, 1, 196608, 7, 2, 196608, 7, 3, 196608, 7, 4, 196608, 7, 5, 196608, 7, 6, 196608, 7, 7, 196608, 7, 8, 196608, 7, 9, 196608, 7, 10, 196608, 7, 11, 196608, 7, 12, 196608, 7, 13, 196608, 7, 14, 196608, 7, 15, 196608, 7, 16, 196608, 7, 17, 196608, 7, 18, 196608, 7, 19, 196608, 7, 20, 196608, 7, 21, 196608, 7, 22, 196608, 7, 23, 196608, 7, 24, 196608, 7, 25, 196608, 7, -196582, 196608, 7, -131046, 196608, 7, -65510, 196608, 7, -131075, 196608, 7, -65539, 196608, 7, -3, 196608, 7)
+layer_0/tile_data = PackedInt32Array(65534, 196608, 7, 65535, 196608, 7, 0, 196608, 7, 1, 196608, 7, 2, 196608, 7, 3, 196608, 7, 4, 196608, 7, 5, 196608, 7, 6, 196608, 7, 7, 196608, 7, 8, 196608, 7, 9, 196608, 7, 10, 196608, 7, 11, 196608, 7, 12, 196608, 7, 13, 196608, 7, 14, 196608, 7, 15, 196608, 7, 16, 196608, 7, 17, 196608, 7, 18, 196608, 7, 19, 196608, 7, 20, 196608, 7, 21, 196608, 7, 22, 196608, 7, 23, 196608, 7, 24, 196608, 7, 25, 196608, 7, -131075, 196608, 7, -65539, 196608, 7, -3, 196608, 7, 26, 196608, 7, 27, 196608, 7, 28, 196608, 7, 29, 196608, 7, 30, 196608, 7, 31, 196608, 7, 32, 196608, 7, 33, 196608, 7, 34, 196608, 7, 35, 196608, 7, 36, 196608, 7, 37, 196608, 7, 38, 196608, 7, -65498, 196608, 7, -131034, 196608, 7)
 
 [node name="NB6n3" type="Sprite2D" parent="."]
 visible = false
@@ -1112,20 +1117,20 @@ scale = Vector2(0.992251, 0.992251)
 texture = ExtResource("1_j427n")
 
 [node name="objeto" parent="." instance=ExtResource("12_o7etf")]
-position = Vector2(164, -11)
+position = Vector2(155, -10)
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("2_5nq85")]
 position = Vector2(48, -17)
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
-offset = Vector2(-15.3, -64.715)
-anchor_mode = 0
-zoom = Vector2(7.88, 7.88)
-limit_left = -15
-limit_right = 425
+position = Vector2(0, -32)
+zoom = Vector2(5.495, 5.495)
+limit_left = -30
+limit_right = 612
 position_smoothing_enabled = true
 rotation_smoothing_enabled = true
 editor_draw_limits = true
+script = ExtResource("12_8y2gv")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="CharacterBody2D"]
 position = Vector2(-48, 17)
@@ -1133,21 +1138,29 @@ stream = ExtResource("4_54ncl")
 volume_db = 4.0
 autoplay = true
 
-[node name="Enemie" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(290, -17)
-scale = Vector2(0.100418, 0.100418)
-texture = ExtResource("12_c5ctt")
-flip_h = true
-hframes = 4
-
-[node name="LightOccluder2D" type="LightOccluder2D" parent="Enemie"]
-occluder = SubResource("OccluderPolygon2D_muaw7")
-occluder_light_mask = 2
-
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color(0.12549, 0.12549, 0.12549, 1)
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
 position = Vector2(48, -17)
 color = Color(0.529412, 0.694118, 0.968627, 1)
+
+[node name="Enemigo" type="Area2D" parent="."]
+script = ExtResource("14_gccjd")
+
+[node name="Enemie" type="Sprite2D" parent="Enemigo"]
+position = Vector2(290, -17)
+scale = Vector2(0.100418, 0.100418)
+texture = ExtResource("12_c5ctt")
+flip_h = true
+hframes = 4
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Enemigo/Enemie"]
+occluder = SubResource("OccluderPolygon2D_muaw7")
+occluder_light_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemigo"]
+position = Vector2(288.5, -17.5)
+shape = SubResource("RectangleShape2D_ifved")
+
+[connection signal="body_entered" from="Enemigo" to="." method="_on_enemigo_body_entered"]

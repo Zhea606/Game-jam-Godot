@@ -16,7 +16,7 @@ func _physics_process(_delta):
 	velocity.y += gravity
 	var friction = false
 
-	if Input.is_action_pressed("ui_right"):
+	if Input.is_action_pressed("right_move"):
 		sprite.visible = false
 		spriteWalking.visible = true
 		sprite.flip_h = false
@@ -24,7 +24,7 @@ func _physics_process(_delta):
 		animationPlayer.play("Walk")
 		velocity.x = min(velocity.x + moveSpeed, maxSpeed)
 		light.rotation_degrees = 0
-	elif Input.is_action_pressed("ui_left"):
+	elif Input.is_action_pressed("left_move"):
 		sprite.visible = false
 		spriteWalking.visible = true
 		sprite.flip_h = true
