@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://m2d01u8iw0n2"]
+
+[ext_resource type="Texture2D" uid="uid://cxqw5q3uk8xja" path="res://assets/backgrounds/casa_/2.png" id="1_fwty7"]
+[ext_resource type="Texture2D" uid="uid://3txgttp5a8n1" path="res://assets/backgrounds/casa_/4.png" id="2_cf2fi"]
+[ext_resource type="Texture2D" uid="uid://dcyi4msqsrvuy" path="res://assets/backgrounds/casa_/1.png" id="3_p8m8x"]
+[ext_resource type="PackedScene" uid="uid://de4njslgpw7sc" path="res://scenes/player.tscn" id="4_368e5"]
+
+[node name="Casa de los Hermanos" type="Node2D"]
+
+[node name="CanvasGroup" type="CanvasGroup" parent="."]
+
+[node name="2" type="Sprite2D" parent="CanvasGroup"]
+position = Vector2(34.1398, 272.618)
+scale = Vector2(0.700103, 0.520876)
+texture = ExtResource("1_fwty7")
+
+[node name="4" type="Sprite2D" parent="CanvasGroup"]
+position = Vector2(34, 264)
+scale = Vector2(0.699074, 0.699074)
+texture = ExtResource("2_cf2fi")
+
+[node name="1" type="Sprite2D" parent="CanvasGroup"]
+z_index = -1
+position = Vector2(35.3333, 254.25)
+scale = Vector2(0.695988, 0.695988)
+texture = ExtResource("3_p8m8x")
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("4_368e5")]
+position = Vector2(-56, 313)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(44, 249)
+zoom = Vector2(3, 3)
+
+[node name="TileMap" type="TileMap" parent="."]
+format = 2
