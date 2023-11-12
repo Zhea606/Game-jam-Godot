@@ -1,0 +1,41 @@
+[gd_scene load_steps=3 format=3 uid="uid://dx4j254tu64mq"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_d4os7"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ngd7v"]
+font_size = 23
+font_color = Color(0, 0, 0, 1)
+
+[node name="dialogo_scene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Dialogo" type="Control" parent="."]
+anchors_preset = 0
+
+[node name="TextureRect" type="TextureRect" parent="Dialogo"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = 1.0
+offset_right = 765.0
+offset_bottom = 145.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_d4os7")
+
+[node name="texto" type="Label" parent="Dialogo"]
+layout_mode = 0
+offset_left = 173.0
+offset_top = 13.0
+offset_right = 839.0
+offset_bottom = 144.0
+text = "asdjsadkj akdjaskdjask ka"
+label_settings = SubResource("LabelSettings_ngd7v")

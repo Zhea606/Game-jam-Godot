@@ -20,3 +20,5 @@ shape = SubResource("CircleShape2D_jjt40")
 
 [connection signal="body_entered" from="objeto1" to="objeto1" method="_on_body_entered"]
 [connection signal="body_exited" from="objeto1" to="objeto1" method="_on_body_exited"]
+[connection signal="input_event" from="objeto1" to="objeto1" method="_on_input_event"]
+[connection signal="ready" from="objeto1" to="objeto1" method="_on_ready"]
