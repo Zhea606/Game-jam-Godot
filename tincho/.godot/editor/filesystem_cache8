@@ -1,51 +1,51 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1699581094
-icon.svg::CompressedTexture2D::1638512944357096581::1699313539::1699313539::1::::<><>::
-README.md::TextFile::-1::1699575545::0::1::::<><>::
-::res://assets/::1699493874
-::res://assets/backgrounds/::1699580908
-Assets.png::CompressedTexture2D::5252133792196200706::1699313539::1699313539::1::::<><>::
-N_b6N3.png::CompressedTexture2D::7741641787251571784::1699313539::1699313539::1::::<><>::
-::res://assets/backgrounds/casa_/::1699580938
-1.png::CompressedTexture2D::7349722987256571452::1699580937::1699581184::1::::<><>::
-2.png::CompressedTexture2D::6421605047335434166::1699580937::1699581184::1::::<><>::
-3.png::CompressedTexture2D::915221071016124996::1699580937::1699581184::1::::<><>::
-4.png::CompressedTexture2D::2005919032805697240::1699580937::1699581184::1::::<><>::
-Summer1.png::CompressedTexture2D::7586823947110779853::1699580937::1699581184::1::::<><>::
-::res://assets/backgrounds/fondoscrelieve/::1699493874
-normalmap2-parallax-demon-woods-far-trees.png::CompressedTexture2D::6191215086149069294::1699313539::1699313539::1::::<><>::
-normalmap-parallax-demon-woods-far-trees.png::CompressedTexture2D::2790751416199030811::1699313539::1699313539::1::::<><>::
-parallax2-demon-woods-far-trees.png::CompressedTexture2D::9029703064042134251::1699313539::1699313539::1::::<><>::
-parallax-demon-woods-far-trees.png::CompressedTexture2D::747956397372421183::1699313539::1699313539::1::::<><>::
-::res://assets/backgrounds/layers/::1699493874
-parallax-demon-woods-bg.png::CompressedTexture2D::2412450154848296871::1699313539::1699313539::1::::<><>::
-parallax-demon-woods-close-trees.png::CompressedTexture2D::5159518829678168964::1699313539::1699313539::1::::<><>::
-parallax-demon-woods-far-trees.png::CompressedTexture2D::5760736605654076032::1699313539::1699313539::1::::<><>::
-parallax-demon-woods-mid-trees.png::CompressedTexture2D::8337960010694556202::1699313539::1699313539::1::::<><>::
-::res://assets/character/::1699580479
-Character Idle 48x48.png::CompressedTexture2D::3559388832666317980::1699313539::1699580479::1::::<><>::
-PlayerWalk 48x48.png::CompressedTexture2D::2617822385426639739::1699313539::1699313539::1::::<><>::
-::res://assets/enemies/::1699493874
-png-clipart-walk-cycle-animation-pixel-art-sprite-walking-animation-team-human.png::CompressedTexture2D::2789178656536448029::1699313539::1699313539::1::::<><>::
-::res://assets/propio/::1699493874
-intentodeluz2.png::CompressedTexture2D::4796105144104727338::1699313539::1699313539::1::::<><>::
-intentodeluz3.png::CompressedTexture2D::7064665634935566066::1699313539::1699313539::1::::<><>::
-intentodeluz.png::CompressedTexture2D::3436548042861138754::1699313539::1699313539::1::::<><>::
-notif.png::CompressedTexture2D::4779195298646931786::1699313539::1699313539::1::::<><>::
-potion4.png::CompressedTexture2D::2828462263385766506::1699313539::1699313539::1::::<><>::
-::res://assets/Tilemap/::1699493874
-160x160 background tilemap.png::CompressedTexture2D::5628593552791634304::1699313539::1699313539::1::::<><>::
-Basic Tilemap.png::CompressedTexture2D::618361531243391750::1699313539::1699313539::1::::<><>::
-::res://scenes/::1699581098
-Casa Hermanos.tscn::PackedScene::898232516856070153::1699581098::0::1::::<><>::
-Mundo.tscn::PackedScene::131047221783496957::1699580798::0::1::::<><>::uid://dikdyd2e0mdam::::res://assets/backgrounds/N_b6N3.png<>uid://cg3f415up2euc::::res://assets/backgrounds/Assets.png<>res://scripts/Mundo.gd<>uid://de4njslgpw7sc::::res://scenes/player.tscn<>uid://bamux4bf6tx8b::::res://assets/backgrounds/layers/parallax-demon-woods-bg.png<>uid://cuhcn4s6s8sxq::::res://assets/backgrounds/fondoscrelieve/normalmap2-parallax-demon-woods-far-trees.png<>uid://cocsqwyownjn1::::res://assets/backgrounds/layers/parallax-demon-woods-far-trees.png<>uid://d1wb5jc04jgp4::::res://assets/backgrounds/fondoscrelieve/parallax2-demon-woods-far-trees.png<>uid://cfbt4hhj2hbyu::::res://sounds/back-present.ogg<>uid://dq178otdopbug::::res://assets/backgrounds/layers/parallax-demon-woods-mid-trees.png<>uid://cfrkryvs4vyfc::::res://assets/backgrounds/layers/parallax-demon-woods-close-trees.png<>uid://bf0dmn50jx2jx::::res://assets/enemies/png-clipart-walk-cycle-animation-pixel-art-sprite-walking-animation-team-human.png<>uid://cg6l5q4ht0svk::::res://scenes/objeto1.tscn
-objeto1.gd::GDScript::-1::1699313539::0::1::::<>Node2D<>::
-objeto1.tscn::PackedScene::5258692485845200308::1699580799::0::1::::<><>::uid://bgkemiowjhd0e::::res://assets/propio/potion4.png<>res://scripts/objeto1.gd
-player.tscn::PackedScene::7500690736256985350::1699580799::0::1::::<><>::uid://bqygu43i28ylo::::res://assets/character/Character Idle 48x48.png<>res://scripts/player.gd<>uid://bdkdff73gidcl::::res://assets/character/PlayerWalk 48x48.png<>uid://c7wgamsk87svq::::res://assets/propio/intentodeluz3.png<>uid://cadcwbps0lm6u::::res://assets/propio/notif.png
-::res://scripts/::1699575545
-Mundo.gd::GDScript::-1::1699313539::0::1::::<>Node2D<>::
-objeto1.gd::GDScript::-1::1699313539::0::1::::<>Area2D<>::
-player.gd::GDScript::-1::1699575545::0::1::::<>CharacterBody2D<>::
-::res://sounds/::1699493874
-back-present.ogg::AudioStreamOggVorbis::5127055753138587536::1699313539::1699313539::1::::<><>::
-background-present.mp3::AudioStreamMP3::1239037463925709256::1699313539::1699313539::1::::<><>::
+::res://::1699791122
+icon.svg::CompressedTexture2D::1638512944357096581::1699789738::1699789738::1::::<><>::
+README.md::TextFile::-1::1699789738::0::1::::<><>::
+::res://assets/::1699789738
+::res://assets/backgrounds/::1699791024
+Assets.png::CompressedTexture2D::5252133792196200706::1699789738::1699789738::1::::<><>::
+N_b6N3.png::CompressedTexture2D::7741641787251571784::1699789738::1699789738::1::::<><>::
+::res://assets/backgrounds/casa_/::1699791070
+1.png::CompressedTexture2D::7349722987256571452::1699791024::1699791069::1::::<><>::
+2.png::CompressedTexture2D::6421605047335434166::1699791024::1699791069::1::::<><>::
+3.png::CompressedTexture2D::915221071016124996::1699791024::1699791069::1::::<><>::
+4.png::CompressedTexture2D::2005919032805697240::1699791024::1699791069::1::::<><>::
+Summer1.png::CompressedTexture2D::7586823947110779853::1699791024::1699791070::1::::<><>::
+::res://assets/backgrounds/fondoscrelieve/::1699789738
+normalmap2-parallax-demon-woods-far-trees.png::CompressedTexture2D::6191215086149069294::1699789738::1699789738::1::::<><>::
+normalmap-parallax-demon-woods-far-trees.png::CompressedTexture2D::2790751416199030811::1699789738::1699789738::1::::<><>::
+parallax2-demon-woods-far-trees.png::CompressedTexture2D::9029703064042134251::1699789738::1699789738::1::::<><>::
+parallax-demon-woods-far-trees.png::CompressedTexture2D::747956397372421183::1699789738::1699789738::1::::<><>::
+::res://assets/backgrounds/layers/::1699789738
+parallax-demon-woods-bg.png::CompressedTexture2D::2412450154848296871::1699789738::1699789738::1::::<><>::
+parallax-demon-woods-close-trees.png::CompressedTexture2D::5159518829678168964::1699789738::1699789738::1::::<><>::
+parallax-demon-woods-far-trees.png::CompressedTexture2D::5760736605654076032::1699789738::1699789738::1::::<><>::
+parallax-demon-woods-mid-trees.png::CompressedTexture2D::8337960010694556202::1699789738::1699789738::1::::<><>::
+::res://assets/character/::1699791024
+Character Idle 48x48.png::CompressedTexture2D::3559388832666317980::1699789738::1699791024::1::::<><>::
+PlayerWalk 48x48.png::CompressedTexture2D::2617822385426639739::1699789738::1699789738::1::::<><>::
+::res://assets/enemies/::1699789738
+png-clipart-walk-cycle-animation-pixel-art-sprite-walking-animation-team-human.png::CompressedTexture2D::2789178656536448029::1699789738::1699789738::1::::<><>::
+::res://assets/propio/::1699789738
+intentodeluz2.png::CompressedTexture2D::4796105144104727338::1699789738::1699789738::1::::<><>::
+intentodeluz3.png::CompressedTexture2D::7064665634935566066::1699789738::1699789738::1::::<><>::
+intentodeluz.png::CompressedTexture2D::3436548042861138754::1699789738::1699789738::1::::<><>::
+notif.png::CompressedTexture2D::4779195298646931786::1699789738::1699789738::1::::<><>::
+potion4.png::CompressedTexture2D::2828462263385766506::1699789738::1699789738::1::::<><>::
+::res://assets/Tilemap/::1699789738
+160x160 background tilemap.png::CompressedTexture2D::5628593552791634304::1699789738::1699789738::1::::<><>::
+Basic Tilemap.png::CompressedTexture2D::618361531243391750::1699789738::1699789738::1::::<><>::
+::res://scenes/::1699791109
+Casa Hermanos.tscn::PackedScene::-1::1699791024::0::1::::<><>::
+Mundo.tscn::PackedScene::131047221783496957::1699791109::0::1::::<><>::uid://dikdyd2e0mdam::::res://assets/backgrounds/N_b6N3.png<>uid://cg3f415up2euc::::res://assets/backgrounds/Assets.png<>res://scripts/Mundo.gd<>uid://de4njslgpw7sc::::res://scenes/player.tscn<>uid://bamux4bf6tx8b::::res://assets/backgrounds/layers/parallax-demon-woods-bg.png<>uid://cuhcn4s6s8sxq::::res://assets/backgrounds/fondoscrelieve/normalmap2-parallax-demon-woods-far-trees.png<>uid://cocsqwyownjn1::::res://assets/backgrounds/layers/parallax-demon-woods-far-trees.png<>uid://d1wb5jc04jgp4::::res://assets/backgrounds/fondoscrelieve/parallax2-demon-woods-far-trees.png<>uid://cfbt4hhj2hbyu::::res://sounds/back-present.ogg<>uid://dq178otdopbug::::res://assets/backgrounds/layers/parallax-demon-woods-mid-trees.png<>uid://cfrkryvs4vyfc::::res://assets/backgrounds/layers/parallax-demon-woods-close-trees.png<>uid://bf0dmn50jx2jx::::res://assets/enemies/png-clipart-walk-cycle-animation-pixel-art-sprite-walking-animation-team-human.png<>uid://cg6l5q4ht0svk::::res://scenes/objeto1.tscn
+objeto1.gd::GDScript::-1::1699789738::0::1::::<>Node2D<>::
+objeto1.tscn::PackedScene::5258692485845200308::1699791109::0::1::::<><>::uid://bgkemiowjhd0e::::res://assets/propio/potion4.png<>res://scripts/objeto1.gd
+player.tscn::PackedScene::7500690736256985350::1699791109::0::1::::<><>::uid://bqygu43i28ylo::::res://assets/character/Character Idle 48x48.png<>res://scripts/player.gd<>uid://bdkdff73gidcl::::res://assets/character/PlayerWalk 48x48.png<>uid://c7wgamsk87svq::::res://assets/propio/intentodeluz3.png<>uid://cadcwbps0lm6u::::res://assets/propio/notif.png
+::res://scripts/::1699791082
+Mundo.gd::GDScript::-1::1699791082::0::1::::<>Node2D<>::
+objeto1.gd::GDScript::-1::1699791082::0::1::::<>Area2D<>::
+player.gd::GDScript::-1::1699791082::0::1::::<>CharacterBody2D<>::
+::res://sounds/::1699789738
+back-present.ogg::AudioStreamOggVorbis::5127055753138587536::1699789738::1699789738::1::::<><>::
+background-present.mp3::AudioStreamMP3::1239037463925709256::1699789738::1699789738::1::::<><>::
