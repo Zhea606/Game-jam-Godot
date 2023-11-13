@@ -119,8 +119,16 @@ func _physics_process(_delta):
 ## Cámara
 
 ### Crear cámara que sigue al jugador
+- Para crear una cámara 2D que siga al jugador sólo debemos crear un nodo "Camera2D" como hijo del personaje, ya sea en la escena principal o en la escena del personaje.
+
+![Camera2D](https://sp-ao.shortpixel.ai/client/to_webp,q_glossy,ret_img,w_407/https://www.nightquestgames.com/wp-content/uploads/2023/04/godot-4-adding-camera-under-player-1.png)
+
+Ref: [Documentación Oficial](https://docs.godotengine.org/es/4.x/classes/class_camera2d.html)
 
 ### Límites de cámara
+- Los limites de la cámara son una propiedad del Nodo, se pueden configurar para que la cámara se detenga en ciertos puntos como los límites del mapa.
+
+Ref: [[TUTORIAL] IndieLibre | Límites de cámara 2D | Godot 3](https://youtu.be/0IWIngMt06E?si=thYIVumCJD1_kB9L)
 
 ### Hacer temblar cámara
 
@@ -206,7 +214,14 @@ func _physics_process(_delta):
 Ref: [Blender Tutorial - How to Create Normal Maps in Gimp](https://www.youtube.com/watch?v=vxBRJrnXyto)
 
 - Creamos en godot un sprite2D para el fondo y en Texture elegimos "New Canvas Texture"
+
 ![New Canvas Texture](https://docs.godotengine.org/en/stable/_images/2d_lights_and_shadows_create_canvastexture.webp)
+
+- Editamos el Canvas Texture
+
+Diffuse: La imágen de fondo
+
+Normal Map: El normal map creado anteriormente 
 
 Ref: [Documentación Oficial](https://docs.godotengine.org/en/stable/tutorials/2d/2d_lights_and_shadows.html#normal-and-specular-maps)
 ### Sombras
@@ -217,6 +232,7 @@ Ref: [Documentación Oficial](https://docs.godotengine.org/en/stable/tutorials/2
 - Creamos un sprite en el personaje para colocar la imágen de la notificación.
 
 Ejemplo:
+
 ![Notificación](https://github.com/Zhea606/Game-jam-Godot/blob/560bec4488ce812d2e2df955ee3b9b36c218826b/tincho/assets/propio/notif.png)
 
 - En la escena donde queramos que aparezca la notificación creamos un Área 2D con el código para activarla cuando un cuerpo ingrese a la misma.
