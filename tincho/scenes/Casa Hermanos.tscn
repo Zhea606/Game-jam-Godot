@@ -1,9 +1,19 @@
-[gd_scene load_steps=5 format=3 uid="uid://nhhde01fe5k0"]
+[gd_scene load_steps=7 format=3 uid="uid://cq86uhu01c1sp"]
 
 [ext_resource type="Texture2D" uid="uid://cxqw5q3uk8xja" path="res://assets/backgrounds/casa_/2.png" id="1_fwty7"]
 [ext_resource type="Texture2D" uid="uid://3txgttp5a8n1" path="res://assets/backgrounds/casa_/4.png" id="2_cf2fi"]
 [ext_resource type="Texture2D" uid="uid://dcyi4msqsrvuy" path="res://assets/backgrounds/casa_/1.png" id="3_p8m8x"]
 [ext_resource type="PackedScene" uid="uid://de4njslgpw7sc" path="res://scenes/player.tscn" id="4_368e5"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6c7i3"]
+texture = ExtResource("1_fwty7")
+use_texture_padding = false
+0:12/0 = 0
+1:12/0 = 0
+2:12/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_7ocit"]
+sources/0 = SubResource("TileSetAtlasSource_6c7i3")
 
 [node name="Casa de los Hermanos" type="Node2D"]
 
@@ -33,4 +43,5 @@ position = Vector2(100, -64)
 zoom = Vector2(3, 3)
 
 [node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_7ocit")
 format = 2
