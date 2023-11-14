@@ -14,8 +14,14 @@
   - [Rotación de luz](#rotación-de-luz)
   - [Luz con relieve](#luz-con-relieve)
   - [Sombras](#sombras)
-* [Interacción con objetos](#interacción-con-objetos)
-  - [Notificación de interacción con objeto](#notificación-de-interacción-con-objeto)
+* [Interacción con items](#interacción-con-items)
+  - [Notificación de interacción con items](#notificación-de-interacción-con-items)
+* [Instanciación](#instanciación)
+  - [Instanciar escenas](#instanciar-escenas)
+* [Trabajar con grupos](#trabajar-con-grupos)
+  - [Crear grupos](#crear-grupos)
+  - [Verificar grupo](#verificar-grupo)
+  - [Llamar a funcion de un grupo](#llamar-a-funcion-de-un-grupo)
 
 
 
@@ -226,9 +232,9 @@ Normal Map: El normal map creado anteriormente
 Ref: [Documentación Oficial](https://docs.godotengine.org/en/stable/tutorials/2d/2d_lights_and_shadows.html#normal-and-specular-maps)
 ### Sombras
 
-## Interacción con objetos
+## Interacción con items
 
-### Notificación de interacción con objeto
+### Notificación de interacción con items
 - Creamos un sprite en el personaje para colocar la imágen de la notificación.
 
 Ejemplo:
@@ -249,4 +255,47 @@ func _on_body_exited(body):
 	print(body.name)
 	if body.name == "CharacterBody2D":
 		body.get_node("notif").visible = false
+```
+
+## Instanciación
+### Instanciar escenas
+- Para instanciar objetos primero debemos precargar la escena. Luego instanciar el objeto y finalmente se podrá agregarlo a la escena.
+
+Código:
+```
+# Cargar escena
+var player_scene = preload("res://scenes/player.tscn")
+
+func _ready():
+	# Instanciar objeto
+	var player = player_scene.instantiate()
+	# Agregarlo a la escena actual como hijo
+	add_child(player)
+```
+[Documentación Oficial](https://docs.godotengine.org/es/4.x/tutorials/scripting/nodes_and_scene_instances.html#instancing-scenes)
+
+## Trabajar con grupos
+### Crear grupos
+- Para crear un grupo se debe seleccionar el nodo en cuestión y luego en "Node" (Al lado del Inspector) seleccionar "Groups". Insertando un nombre y haciendo click sobre "Add" se agregará al nodo a ese grupo.
+
+![Grupos](https://docs.godotengine.org/es/4.x/_images/groups_add_node_to_group.webp)
+
+[Documentación Oficial](https://docs.godotengine.org/es/4.x/tutorials/scripting/groups.html)
+### Verificar grupo
+- Con el método is_in_group() se puede verificar si tal nodo u objeto pertenece a un grupo. Por ejemplo para verificar si el cuerpo que entra en un Área2D pertenece al grupo "player".
+
+Código:
+```
+func _on_body_entered(body):
+	if body.is_in_group("player"):
+		...
+```
+### Llamar a funcion de un grupo
+- Para llamar a la función perteneciente a todos los objetos de un mismo grupo se puede utilizar el método call_group(Grupo,Método). Dónde ambos parámetros son Strings y hacen referencia al nombre del grupo y al método a llamar. Primero se deberá llamar al árbol de la escena con get_tree() para obtener la información de los grupos.
+
+Código:
+
+```
+# Llamar a la función stop_player() en todos los objetos pertenecientes al grupo player
+get_tree().call_group("player","stop_player")
 ```
