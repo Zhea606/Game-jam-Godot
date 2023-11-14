@@ -81,7 +81,7 @@ _data = {
 "light": SubResource("Animation_r815k")
 }
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
+[node name="CharacterBody2D" type="CharacterBody2D" groups=["player"]]
 script = ExtResource("1_xmsiu")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

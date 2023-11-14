@@ -1,19 +1,15 @@
-[gd_scene load_steps=21 format=3 uid="uid://b4qlf4fm6c74"]
+[gd_scene load_steps=17 format=3 uid="uid://b4qlf4fm6c74"]
 
 [ext_resource type="Texture2D" uid="uid://dikdyd2e0mdam" path="res://assets/backgrounds/N_b6N3.png" id="1_j427n"]
 [ext_resource type="Texture2D" uid="uid://cg3f415up2euc" path="res://assets/backgrounds/Assets.png" id="1_mfte0"]
 [ext_resource type="Script" path="res://scripts/Mundo.gd" id="1_tvynm"]
-[ext_resource type="PackedScene" uid="uid://de4njslgpw7sc" path="res://scenes/player.tscn" id="2_5nq85"]
 [ext_resource type="Texture2D" uid="uid://bamux4bf6tx8b" path="res://assets/backgrounds/layers/parallax-demon-woods-bg.png" id="2_h0aoy"]
 [ext_resource type="Texture2D" uid="uid://cuhcn4s6s8sxq" path="res://assets/backgrounds/fondoscrelieve/normalmap2-parallax-demon-woods-far-trees.png" id="3_bef2k"]
 [ext_resource type="Texture2D" uid="uid://cocsqwyownjn1" path="res://assets/backgrounds/layers/parallax-demon-woods-far-trees.png" id="3_ib856"]
 [ext_resource type="Texture2D" uid="uid://d1wb5jc04jgp4" path="res://assets/backgrounds/fondoscrelieve/parallax2-demon-woods-far-trees.png" id="3_ychma"]
-[ext_resource type="AudioStream" uid="uid://cfbt4hhj2hbyu" path="res://sounds/back-present.ogg" id="4_54ncl"]
 [ext_resource type="Texture2D" uid="uid://dq178otdopbug" path="res://assets/backgrounds/layers/parallax-demon-woods-mid-trees.png" id="4_kfnj0"]
 [ext_resource type="Texture2D" uid="uid://cfrkryvs4vyfc" path="res://assets/backgrounds/layers/parallax-demon-woods-close-trees.png" id="5_17teg"]
-[ext_resource type="Script" path="res://scripts/Camera2D.gd" id="12_8y2gv"]
 [ext_resource type="Texture2D" uid="uid://bf0dmn50jx2jx" path="res://assets/enemies/png-clipart-walk-cycle-animation-pixel-art-sprite-walking-animation-team-human.png" id="12_c5ctt"]
-[ext_resource type="PackedScene" uid="uid://cg6l5q4ht0svk" path="res://scenes/objeto1.tscn" id="12_o7etf"]
 [ext_resource type="Script" path="res://scripts/Enemigo.gd" id="14_gccjd"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_l5yuo"]
@@ -1052,8 +1048,8 @@ size = Vector2(11, 33)
 
 [node name="Forest" type="Node2D"]
 script = ExtResource("1_tvynm")
-metadata/_edit_vertical_guides_ = [-32.0, 612.0, 164.0, 180.0, 0.0]
-metadata/_edit_horizontal_guides_ = [-126.0, 0.0]
+metadata/_edit_vertical_guides_ = [-33.0, 613.0, 164.0, 180.0, 0.0]
+metadata/_edit_horizontal_guides_ = [-126.0, 0.0, 26.0]
 
 [node name="fondo2" type="CanvasGroup" parent="."]
 position = Vector2(451, -48)
@@ -1116,35 +1112,6 @@ position = Vector2(693.286, 1.1772)
 scale = Vector2(0.992251, 0.992251)
 texture = ExtResource("1_j427n")
 
-[node name="objeto" parent="." instance=ExtResource("12_o7etf")]
-position = Vector2(155, -10)
-
-[node name="CharacterBody2D" parent="." instance=ExtResource("2_5nq85")]
-position = Vector2(48, -17)
-
-[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
-position = Vector2(0, -32)
-zoom = Vector2(5.495, 5.495)
-limit_left = -30
-limit_right = 612
-position_smoothing_enabled = true
-rotation_smoothing_enabled = true
-editor_draw_limits = true
-script = ExtResource("12_8y2gv")
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="CharacterBody2D"]
-position = Vector2(-48, 17)
-stream = ExtResource("4_54ncl")
-volume_db = 4.0
-autoplay = true
-
-[node name="CanvasModulate" type="CanvasModulate" parent="."]
-color = Color(0.12549, 0.12549, 0.12549, 1)
-
-[node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
-position = Vector2(48, -17)
-color = Color(0.529412, 0.694118, 0.968627, 1)
-
 [node name="Enemigo" type="Area2D" parent="."]
 script = ExtResource("14_gccjd")
 
@@ -1163,4 +1130,18 @@ occluder_light_mask = 2
 position = Vector2(288.5, -17.5)
 shape = SubResource("RectangleShape2D_ifved")
 
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0.12549, 0.12549, 0.12549, 1)
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
+position = Vector2(48, -17)
+color = Color(0.529412, 0.694118, 0.968627, 1)
+
+[node name="spawn_player" type="Node2D" parent="."]
+position = Vector2(16, -22)
+
+[node name="spawn_objeto" type="Node2D" parent="."]
+position = Vector2(190, -11)
+
 [connection signal="body_entered" from="Enemigo" to="." method="_on_enemigo_body_entered"]
+[connection signal="body_entered" from="Enemigo" to="Enemigo" method="_on_body_entered"]
