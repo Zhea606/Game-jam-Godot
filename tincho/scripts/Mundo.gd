@@ -1,9 +1,9 @@
 extends Node2D
 
-@onready var camara = $CharacterBody2D/Camera2D
 @onready var enemigo = $Enemigo
 @onready var spawn_player = $spawn_player
 
+# Precargar escenas a instanciar
 var player_scene = preload("res://scenes/player.tscn")
 var camera_scene = preload("res://scenes/camera.tscn")
 var object_scene = preload("res://scenes/objeto1.tscn")
@@ -19,16 +19,23 @@ func _process(delta):
 	pass
 
 func instantiate_player():
+	# Instanciar escena del personaje
 	player = player_scene.instantiate()
+	# Definir su posicion a partir de otro sprite creado en la escena
 	player.position = spawn_player.position
+	# Agregarlo a la escena principal como hijo
 	add_child(player)
+	# Instanciar la camara del personaje
 	instantiate_camera()
 
 func instantiate_camera():
+	# Instanciar escena de la camara
 	camera = camera_scene.instantiate()
+	# Definir sus limites
 	camera.limit_left = -30
 	camera.limit_bottom = 26
 	camera.limit_right = 613
+	# Agregar la camara como hija del personaje
 	player.add_child(camera)
 
 func set_objects():
