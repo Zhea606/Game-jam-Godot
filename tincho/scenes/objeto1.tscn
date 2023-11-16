@@ -1,6 +1,5 @@
-[gd_scene load_steps=4 format=3 uid="uid://cg6l5q4ht0svk"]
+[gd_scene load_steps=3 format=3 uid="uid://cg6l5q4ht0svk"]
 
-[ext_resource type="Texture2D" uid="uid://bgkemiowjhd0e" path="res://assets/propio/potion4.png" id="1_8a2mo"]
 [ext_resource type="Script" path="res://scripts/objeto1.gd" id="1_ac2yg"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jjt40"]
@@ -8,12 +7,10 @@ radius = 9.0
 
 [node name="Node2D" type="Node2D"]
 
-[node name="objeto1" type="Area2D" parent="."]
+[node name="objeto1" type="Area2D" parent="." groups=["objeto"]]
 script = ExtResource("1_ac2yg")
 
 [node name="Sprite2D" type="Sprite2D" parent="objeto1"]
-texture = ExtResource("1_8a2mo")
-hframes = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="objeto1"]
 shape = SubResource("CircleShape2D_jjt40")

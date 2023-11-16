@@ -23,3 +23,6 @@ func _process(delta):
 	
 func randomOffset() -> Vector2:
 	return Vector2(rng.randf_range(-shake_strength,shake_strength),rng.randf_range(-shake_strength,shake_strength))
+
+func get_position_camera():
+	return get_screen_center_position()

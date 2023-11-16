@@ -8,5 +8,5 @@ func _on_body_entered(body):
 		body.get_node("camera_player").add_trauma()
 		# Eliminar personaje e instanciar nuevamente llamando la funcion
 		# de la escena principal
-		body.queue_free()
-		get_parent().instantiate_player()
+		#body.queue_free()
+		#get_parent().instantiate_player()

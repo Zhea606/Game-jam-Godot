@@ -1052,6 +1052,7 @@ metadata/_edit_vertical_guides_ = [-33.0, 613.0, 164.0, 180.0, 0.0]
 metadata/_edit_horizontal_guides_ = [-126.0, 0.0, 26.0]
 
 [node name="fondo2" type="CanvasGroup" parent="."]
+visible = false
 position = Vector2(451, -48)
 scale = Vector2(0.545, 0.545)
 
@@ -1073,8 +1074,23 @@ position = Vector2(129, -48)
 scale = Vector2(0.545, 0.545)
 texture = SubResource("CanvasTexture_l5yuo")
 
+[node name="cRelieve2" type="CanvasGroup" parent="."]
+visible = false
+self_modulate = Color(0.45098, 0.392157, 0.384314, 1)
+
+[node name="Sprite2D2" type="Sprite2D" parent="cRelieve2"]
+position = Vector2(451, -48)
+scale = Vector2(0.545, 0.545)
+texture = SubResource("CanvasTexture_l5yuo")
+
+[node name="Sprite2D" type="Sprite2D" parent="cRelieve2"]
+position = Vector2(129, -48)
+scale = Vector2(0.545, 0.545)
+texture = SubResource("CanvasTexture_l5yuo")
+
 [node name="fondo" type="CanvasGroup" parent="."]
 visible = false
+modulate = Color(0.486275, 0.219608, 0, 1)
 position = Vector2(37.045, 17.525)
 scale = Vector2(0.775, 0.775)
 
@@ -1113,6 +1129,8 @@ scale = Vector2(0.992251, 0.992251)
 texture = ExtResource("1_j427n")
 
 [node name="Enemigo" type="Area2D" parent="."]
+visible = false
+position = Vector2(121, 0)
 script = ExtResource("14_gccjd")
 
 [node name="Enemie" type="Sprite2D" parent="Enemigo"]
@@ -1130,18 +1148,21 @@ occluder_light_mask = 2
 position = Vector2(288.5, -17.5)
 shape = SubResource("RectangleShape2D_ifved")
 
-[node name="CanvasModulate" type="CanvasModulate" parent="."]
-color = Color(0.12549, 0.12549, 0.12549, 1)
-
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
 position = Vector2(48, -17)
 color = Color(0.529412, 0.694118, 0.968627, 1)
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0.12549, 0.12549, 0.12549, 1)
 
 [node name="spawn_player" type="Node2D" parent="."]
 position = Vector2(16, -22)
 
 [node name="spawn_objeto" type="Node2D" parent="."]
-position = Vector2(190, -11)
+position = Vector2(191, -8)
+
+[node name="spawn_objeto2" type="Node2D" parent="."]
+position = Vector2(349, -7)
 
 [connection signal="body_entered" from="Enemigo" to="." method="_on_enemigo_body_entered"]
 [connection signal="body_entered" from="Enemigo" to="Enemigo" method="_on_body_entered"]

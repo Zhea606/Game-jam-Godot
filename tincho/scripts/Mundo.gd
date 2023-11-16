@@ -12,7 +12,8 @@ var camera
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	instantiate_player()
-	set_objects()
+	set_object($spawn_objeto.position,"Pocion de la suerte","Esta es la pocion de la suerte.","res://assets/propio/potion.png")
+	set_object($spawn_objeto2.position,"Huevo de la suerte","Re que era todo de la suerte xd.","res://assets/items/09.png")
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -38,7 +39,10 @@ func instantiate_camera():
 	# Agregar la camara como hija del personaje
 	player.add_child(camera)
 
-func set_objects():
-	var objeto1 = object_scene.instantiate()
-	objeto1.position = $spawn_objeto.position
-	add_child(objeto1)
+func set_object(position_obj: Vector2,name_obj: String,description: String,image_path: String):
+	var objeto = object_scene.instantiate()
+	objeto.position = position_obj
+	objeto.get_child(0).nombre = name_obj
+	objeto.get_child(0).descripcion = description
+	objeto.get_child(0).path_image = image_path
+	add_child(objeto)
