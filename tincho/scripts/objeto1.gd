@@ -38,7 +38,7 @@ func _unhandled_input(event: InputEvent) -> void:
 	# Verificar cuando el jugador presiona enter despues de interactuar
 	# con el objeto.
 	# DE MOMENTO NO FUNCIONA COMO SE ESPERA
-	if interact and Input.is_action_just_pressed("ui_accept"):
+	if interact and Input.is_action_just_pressed("exit_interaction"):
 		get_tree().call_group("player","resume_player")
 		get_parent().get_parent().get_node("cRelieve2").visible = false
 		# Borrar objeto
