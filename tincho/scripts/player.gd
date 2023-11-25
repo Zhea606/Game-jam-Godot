@@ -22,7 +22,14 @@ func _physics_process(_delta):
 		sprite.flip_h = false
 		spriteWalking.flip_h = false
 		animationPlayer.play("Walk")
-		velocity.x = min(velocity.x + moveSpeed, maxSpeed)
+#		velocity.x = min(velocity.x + moveSpeed, maxSpeed)
+#
+		if Input.is_action_pressed("sprint") :
+			velocity.x = min(velocity.x + moveSpeed, maxSpeed) * 5
+		else :
+			velocity.x = min(velocity.x + moveSpeed, maxSpeed)
+
+		
 		light.rotation_degrees = 0
 	elif Input.is_action_pressed("left_move"):
 		sprite.visible = false
@@ -30,7 +37,14 @@ func _physics_process(_delta):
 		sprite.flip_h = true
 		spriteWalking.flip_h = true
 		animationPlayer.play("Walk")
-		velocity.x = max(velocity.x - moveSpeed, -maxSpeed)
+#		velocity.x = max(velocity.x - moveSpeed, -maxSpeed)
+#
+		if Input.is_action_pressed("sprint") :
+			velocity.x = max(velocity.x - moveSpeed, -maxSpeed) * 5
+		else :
+			velocity.x = max(velocity.x - moveSpeed, -maxSpeed)
+
+		
 		light.rotation_degrees = 180
 	elif Input.is_action_just_pressed("switch_light"):
 		if not light.enabled:
@@ -52,6 +66,8 @@ func _physics_process(_delta):
 			velocity.x = lerp(velocity.x, 0.0, 0.01)
 
 	move_and_slide()
+	
+	
 	
 #func _draw():
 #	notif.visible = true
