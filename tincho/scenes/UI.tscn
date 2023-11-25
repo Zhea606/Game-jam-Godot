@@ -1,41 +1,14 @@
 [gd_scene format=3 uid="uid://cyngikj5wcw8f"]
 
 [node name="Dialogue" type="Control"]
-custom_minimum_size = Vector2(320, 80)
 layout_mode = 3
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -316.0
-offset_top = -80.0
-offset_right = 4.0
-grow_horizontal = 2
-grow_vertical = 0
-
-[node name="Background" type="ColorRect" parent="."]
-layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = -131.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0, 0, 0.6)
 
-[node name="VContainer" type="VBoxContainer" parent="Background"]
-layout_mode = 2
-offset_left = -3.0
-offset_top = 4.0
-offset_right = 191.0
-offset_bottom = 76.0
-size_flags_horizontal = 3
-
-[node name="_dialogue" type="RichTextLabel" parent="Background/VContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-theme_override_font_sizes/normal_font_size = 14
-text = "Para moverte, usa A y D"
-context_menu_enabled = true
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
