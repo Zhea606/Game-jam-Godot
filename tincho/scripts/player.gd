@@ -13,10 +13,11 @@ const gravity = 15
 @onready var notif = $notif
 
 var is_paused = false
+var friction
 
 func _physics_process(_delta):
 	velocity.y += gravity
-	var friction = false
+	friction = false
 	if not is_paused:
 		if Input.is_action_pressed("right_move"):
 			sprite.visible = false
@@ -59,18 +60,27 @@ func _physics_process(_delta):
 			animationPlayer.play("Idle")
 			friction = true
 
-	if is_on_floor():
-			
-		if friction:
-			velocity.x = lerp(velocity.x, 0.0, 0.5)
-	else:
-		if friction:
-			velocity.x = lerp(velocity.x, 0.0, 0.01)
+		if is_on_floor():
+				
+			if friction:
+				velocity.x = lerp(velocity.x, 0.0, 0.5)
+		else:
+			if friction:
+				velocity.x = lerp(velocity.x, 0.0, 0.01)
 
-	move_and_slide()
+		move_and_slide()
 	
 	
 	
 #func _draw():
 #	notif.visible = true
 #	pass
+func stop_player() -> void:
+	is_paused = true
+	animationPlayer.play("Idle")
+	if spriteWalking.visible:
+		sprite.visible = true
+		spriteWalking.visible = false
+	
+func resume_player() -> void:
+	is_paused = false
