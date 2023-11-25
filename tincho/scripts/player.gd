@@ -12,50 +12,52 @@ const gravity = 15
 @onready var light = $PointLight2D
 @onready var notif = $notif
 
+var is_paused = false
+
 func _physics_process(_delta):
 	velocity.y += gravity
 	var friction = false
+	if not is_paused:
+		if Input.is_action_pressed("right_move"):
+			sprite.visible = false
+			spriteWalking.visible = true
+			sprite.flip_h = false
+			spriteWalking.flip_h = false
+			animationPlayer.play("Walk")
+	#		velocity.x = min(velocity.x + moveSpeed, maxSpeed)
+	#
+			if Input.is_action_pressed("sprint") :
+				velocity.x = min(velocity.x + moveSpeed, maxSpeed) * 5
+			else :
+				velocity.x = min(velocity.x + moveSpeed, maxSpeed)
 
-	if Input.is_action_pressed("right_move"):
-		sprite.visible = false
-		spriteWalking.visible = true
-		sprite.flip_h = false
-		spriteWalking.flip_h = false
-		animationPlayer.play("Walk")
-#		velocity.x = min(velocity.x + moveSpeed, maxSpeed)
-#
-		if Input.is_action_pressed("sprint") :
-			velocity.x = min(velocity.x + moveSpeed, maxSpeed) * 5
-		else :
-			velocity.x = min(velocity.x + moveSpeed, maxSpeed)
+			
+			light.rotation_degrees = 0
+		elif Input.is_action_pressed("left_move"):
+			sprite.visible = false
+			spriteWalking.visible = true
+			sprite.flip_h = true
+			spriteWalking.flip_h = true
+			animationPlayer.play("Walk")
+	#		velocity.x = max(velocity.x - moveSpeed, -maxSpeed)
+	#
+			if Input.is_action_pressed("sprint") :
+				velocity.x = max(velocity.x - moveSpeed, -maxSpeed) * 5
+			else :
+				velocity.x = max(velocity.x - moveSpeed, -maxSpeed)
 
-		
-		light.rotation_degrees = 0
-	elif Input.is_action_pressed("left_move"):
-		sprite.visible = false
-		spriteWalking.visible = true
-		sprite.flip_h = true
-		spriteWalking.flip_h = true
-		animationPlayer.play("Walk")
-#		velocity.x = max(velocity.x - moveSpeed, -maxSpeed)
-#
-		if Input.is_action_pressed("sprint") :
-			velocity.x = max(velocity.x - moveSpeed, -maxSpeed) * 5
-		else :
-			velocity.x = max(velocity.x - moveSpeed, -maxSpeed)
-
-		
-		light.rotation_degrees = 180
-	elif Input.is_action_just_pressed("switch_light"):
-		if not light.enabled:
-			light.enabled = true
+			
+			light.rotation_degrees = 180
+		elif Input.is_action_just_pressed("switch_light"):
+			if not light.enabled:
+				light.enabled = true
+			else:
+				light.enabled = false
 		else:
-			light.enabled = false
-	else:
-		sprite.visible = true
-		spriteWalking.visible = false
-		animationPlayer.play("Idle")
-		friction = true
+			sprite.visible = true
+			spriteWalking.visible = false
+			animationPlayer.play("Idle")
+			friction = true
 
 	if is_on_floor():
 			
