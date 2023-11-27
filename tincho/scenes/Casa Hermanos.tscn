@@ -1,10 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://d238fft2c5p2c"]
+[gd_scene load_steps=12 format=3 uid="uid://d238fft2c5p2c"]
 
 [ext_resource type="Script" path="res://scripts/Casa_Hermanos.gd" id="1_4ynbb"]
 [ext_resource type="Texture2D" uid="uid://cxqw5q3uk8xja" path="res://assets/backgrounds/casa_/2.png" id="1_fwty7"]
 [ext_resource type="Texture2D" uid="uid://3txgttp5a8n1" path="res://assets/backgrounds/casa_/4.png" id="2_cf2fi"]
 [ext_resource type="Texture2D" uid="uid://dcyi4msqsrvuy" path="res://assets/backgrounds/casa_/1.png" id="3_p8m8x"]
 [ext_resource type="PackedScene" uid="uid://de4njslgpw7sc" path="res://scenes/player.tscn" id="4_368e5"]
+[ext_resource type="Texture2D" uid="uid://nbls7jclxfjw" path="res://assets/backgrounds/casa_/3.png" id="6_2q85s"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_mslbq"]
 
@@ -292,20 +293,10 @@ size = Vector2(13, 40)
 
 [node name="Casa de los Hermanos" type="Node2D"]
 script = ExtResource("1_4ynbb")
-metadata/_edit_vertical_guides_ = [238.0, 335.0]
-metadata/_edit_horizontal_guides_ = [145.0]
+metadata/_edit_vertical_guides_ = [238.0, 335.0, -180.0]
+metadata/_edit_horizontal_guides_ = [145.0, 355.0]
 
 [node name="CanvasGroup" type="CanvasGroup" parent="."]
-
-[node name="2" type="Sprite2D" parent="CanvasGroup"]
-position = Vector2(93.9999, 264.618)
-scale = Vector2(0.9375, 0.520876)
-texture = ExtResource("1_fwty7")
-
-[node name="4" type="Sprite2D" parent="CanvasGroup"]
-position = Vector2(45.3333, 242.375)
-scale = Vector2(0.780093, 0.781636)
-texture = ExtResource("2_cf2fi")
 
 [node name="1" type="Sprite2D" parent="CanvasGroup"]
 z_index = -1
@@ -313,29 +304,62 @@ position = Vector2(90.9999, 254.25)
 scale = Vector2(0.9375, 0.695988)
 texture = ExtResource("3_p8m8x")
 
+[node name="2" type="Sprite2D" parent="CanvasGroup"]
+position = Vector2(93.9999, 264.618)
+scale = Vector2(0.9375, 0.520876)
+texture = ExtResource("1_fwty7")
+
+[node name="3" type="Sprite2D" parent="CanvasGroup"]
+z_index = -1
+position = Vector2(630, 254)
+scale = Vector2(0.9375, 0.695988)
+texture = ExtResource("3_p8m8x")
+
+[node name="4" type="Sprite2D" parent="CanvasGroup"]
+position = Vector2(45.3333, 242.375)
+scale = Vector2(0.780093, 0.781636)
+texture = ExtResource("2_cf2fi")
+
+[node name="5" type="Sprite2D" parent="CanvasGroup"]
+position = Vector2(415.969, 257.563)
+scale = Vector2(0.507053, 0.496528)
+texture = ExtResource("6_2q85s")
+
 [node name="CharacterBody2D" parent="." instance=ExtResource("4_368e5")]
+z_index = 1
 position = Vector2(-56, 313)
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
 position = Vector2(100, -50)
-zoom = Vector2(4, 4)
-limit_right = 335
+zoom = Vector2(3.5, 3.5)
+limit_left = -149
+limit_right = 490
+limit_smoothed = true
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(-32, 80)
 tile_set = SubResource("TileSet_7ocit")
 format = 2
-layer_0/tile_data = PackedInt32Array(1114103, 0, 12, 1179639, 0, 13, 1114104, 65536, 12, 1179640, 65536, 13, 1114105, 131072, 12, 1179641, 131072, 13, 1114106, 1900544, 12, 1179642, 1900544, 13, 1114107, 262144, 12, 1179643, 262144, 13, 1114108, 327680, 12, 1179644, 327680, 13, 1114109, 393216, 12, 1179645, 393216, 13, 1114110, 458752, 12, 1179646, 458752, 13, 1114111, 524288, 12, 1179647, 524288, 13, 1048576, 589824, 12, 1114112, 589824, 13, 1048577, 655360, 12, 1114113, 655360, 13, 1048578, 720896, 12, 1114114, 720896, 13, 1048579, 786432, 12, 1114115, 786432, 13, 1048580, 851968, 12, 1114116, 851968, 13, 1048581, 917504, 12, 1114117, 917504, 13, 1048582, 983040, 12, 1114118, 983040, 13, 1048583, 1048576, 12, 1114119, 1048576, 13, 1048584, 1114112, 12, 1114120, 1114112, 13, 1048585, 1179648, 12, 1114121, 1179648, 13, 1048586, 1245184, 12, 1114122, 1245184, 13, 1048587, 1310720, 12, 1114123, 1310720, 13, 1048588, 1376256, 12, 1114124, 1376256, 13, 1048589, 1441792, 12, 1114125, 1441792, 13, 1048590, 1114112, 12, 1114126, 1114112, 13, 1048593, 1703936, 12, 1114129, 1703936, 13, 1048594, 1769472, 12, 1114130, 1769472, 13, 1048595, 1835008, 12, 1114131, 1835008, 13, 1048596, 0, 12, 1114132, 0, 13, 851984, 1900544, 9, 1048597, 65536, 12, 1114133, 65536, 13, 1048598, 131072, 12, 1114134, 131072, 13, 1048599, 196608, 12, 1114135, 196608, 13, 1048600, 262144, 12, 1114136, 262144, 13, 1048591, 1179648, 12, 1114127, 1179648, 13, 1048592, 1245184, 12, 1114128, 1245184, 13)
+layer_0/name = "Capa 0"
+layer_0/tile_data = PackedInt32Array(1114103, 0, 12, 1179639, 0, 13, 1114104, 65536, 12, 1179640, 65536, 13, 1114105, 131072, 12, 1179641, 131072, 13, 1114106, 1900544, 12, 1179642, 1900544, 13, 1114107, 262144, 12, 1179643, 262144, 13, 1114108, 327680, 12, 1179644, 327680, 13, 1114109, 393216, 12, 1179645, 393216, 13, 1114110, 458752, 12, 1179646, 458752, 13, 1114111, 524288, 12, 1179647, 524288, 13, 1048576, 589824, 12, 1114112, 589824, 13, 1048577, 655360, 12, 1114113, 655360, 13, 1048578, 720896, 12, 1114114, 720896, 13, 1048579, 786432, 12, 1114115, 786432, 13, 1048580, 851968, 12, 1114116, 851968, 13, 1048581, 917504, 12, 1114117, 917504, 13, 1048582, 983040, 12, 1114118, 983040, 13, 1048583, 1048576, 12, 1114119, 1048576, 13, 1048584, 1114112, 12, 1114120, 1114112, 13, 1048585, 1179648, 12, 1114121, 1179648, 13, 1048586, 1245184, 12, 1114122, 1245184, 13, 1048587, 1310720, 12, 1114123, 1310720, 13, 1048588, 1376256, 12, 1114124, 1376256, 13, 1048589, 1441792, 12, 1114125, 1441792, 13, 1048590, 1114112, 12, 1114126, 1114112, 13, 1048593, 1703936, 12, 1114129, 1703936, 13, 1048594, 1769472, 12, 1114130, 1769472, 13, 1048595, 1835008, 12, 1114131, 1835008, 13, 851984, 1900544, 9, 1048591, 1179648, 12, 1114127, 1179648, 13, 1048592, 1245184, 12, 1114128, 1245184, 13, 1114136, 262144, 13, 1114135, 196608, 13, 1114134, 131072, 13, 1114133, 65536, 13, 1114132, 0, 13, 1048596, 0, 12, 1048597, 65536, 12, 1048598, 131072, 12, 1048599, 196608, 12, 1048600, 262144, 12, 1048601, 393216, 12, 1114137, 393216, 13, 1048602, 458752, 12, 1114138, 458752, 13, 1048603, 524288, 12, 1114139, 524288, 13, 1048604, 589824, 12, 1114140, 589824, 13, 1048605, 655360, 12, 1114141, 655360, 13, 1048606, 720896, 12, 1114142, 720896, 13, 1048607, 786432, 12, 1114143, 786432, 13, 1048608, 851968, 12, 1114144, 851968, 13, 1048609, 917504, 12, 1114145, 917504, 13, 1048610, 983040, 12, 1114146, 983040, 13, 1048611, 1048576, 12, 1114147, 1048576, 13, 1048612, 1114112, 12, 1114148, 1114112, 13, 1048613, 1179648, 12, 1114149, 1179648, 13, 1048614, 1245184, 12, 1114150, 1245184, 13, 1048615, 1310720, 12, 1114151, 1310720, 13)
+layer_1/name = "Capa 1"
+layer_1/enabled = true
+layer_1/modulate = Color(1, 1, 1, 1)
+layer_1/y_sort_enabled = false
+layer_1/y_sort_origin = 0
+layer_1/z_index = 0
+layer_1/tile_data = PackedInt32Array()
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="Limitadores_mundo" type="StaticBody2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(-161, 310)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Limitadores_mundo"]
+position = Vector2(-138, 310)
 shape = SubResource("RectangleShape2D_ya5c8")
 debug_color = Color(0, 0.6, 0.701961, 0.419608)
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(286, 306)
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Limitadores_mundo"]
+z_index = 1
+position = Vector2(481, 302)
 shape = SubResource("RectangleShape2D_ya5c8")
 debug_color = Color(0, 0.6, 0.701961, 0.419608)
 
