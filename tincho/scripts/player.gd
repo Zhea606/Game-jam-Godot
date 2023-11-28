@@ -27,7 +27,7 @@ func _physics_process(_delta):
 			spriteRunning.visible = false
 			sprite.flip_h = false
 			spriteWalking.flip_h = false
-			animationPlayer.play("Walk")
+			spriteRunning.flip_h = false
 #	        # //para sprint
 			if Input.is_action_pressed("sprint") :
 				velocity.x = min(velocity.x + moveSpeed, maxSpeed) * 3
@@ -38,6 +38,7 @@ func _physics_process(_delta):
 				spriteWalking.flip_h = false
 				animationPlayer.play("Run")
 			else :
+				animationPlayer.play("Walk")
 				velocity.x = min(velocity.x + moveSpeed, maxSpeed)			
 			light.rotation_degrees = 0
 		elif Input.is_action_pressed("left_move"):
@@ -45,11 +46,18 @@ func _physics_process(_delta):
 			spriteWalking.visible = true
 			sprite.flip_h = true
 			spriteWalking.flip_h = true
-			animationPlayer.play("Walk")
 			# //para sprint
 			if Input.is_action_pressed("sprint") :
 				velocity.x = max(velocity.x - moveSpeed, -maxSpeed) * 3
+				sprite.visible = false
+				spriteWalking.visible = false
+				spriteRunning.visible = true
+				sprite.flip_h = false
+				spriteWalking.flip_h = false
+				spriteRunning.flip_h= true
+				animationPlayer.play("Run")
 			else :
+				animationPlayer.play("Walk")
 				velocity.x = max(velocity.x - moveSpeed, -maxSpeed)
 			light.rotation_degrees = 180
 		elif Input.is_action_just_pressed("switch_light"):
@@ -79,13 +87,16 @@ func _physics_process(_delta):
 #func _draw():
 #	notif.visible = true
 #	pass
-func stop_player() -> void:
-	is_paused = true
-	animationPlayer.play("Idle")
-	if spriteWalking.visible:
-		sprite.visible = true
-		spriteWalking.visible = false
-		spriteRunning.visible = false
 
-func resume_player() -> void:
-	is_paused = false
+
+#
+#func stop_player() -> void:
+#	is_paused = true
+#	animationPlayer.play("Idle")
+#	if spriteWalking.visible:
+#		sprite.visible = true
+#		spriteWalking.visible = false
+#		spriteRunning.visible = false
+#
+#func resume_player() -> void:
+#	is_paused = false

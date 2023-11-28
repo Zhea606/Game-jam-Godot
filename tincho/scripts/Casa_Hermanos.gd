@@ -9,8 +9,8 @@ var dialogo
 var dialogo_exist = false
 
 # Called when the node enters the scene tree for the first time.
-func _ready():
-	show_dialogue("Para moverte utiliza WASD")
+#func _ready():
+#	show_dialogue("Para moverte utiliza WASD")
 	
 
 
@@ -22,18 +22,18 @@ func _process(delta):
 		dialogo.queue_free()
 		
 
-func show_dialogue(text: String):
-	dialogo = dialogo_tuto_scene.instantiate()
-	add_child(dialogo)
-	dialogo.descripcion.text = text
-	
-	player.stop_player()
-	dialogo.mostrar_texto()
-	dialogo_exist = true
+#func show_dialogue(text: String):
+#	dialogo = dialogo_tuto_scene.instantiate()
+#	add_child(dialogo)
+#	dialogo.descripcion.text = text
+#
+#	player.stop_player()
+#	dialogo.mostrar_texto()
+#	dialogo_exist = true
 
 
 
-func _on_area_2d_body_entered(body):
-	if body.name == "CharacterBody2D":
-		show_dialogue("Para interactuar con los objetos utiliza la letra E")
+#func _on_area_2d_body_entered(body):
+#	if body.name == "CharacterBody2D":
+#		show_dialogue("Para interactuar con los objetos utiliza la letra E")
 	
