@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://de4njslgpw7sc"]
+[gd_scene load_steps=14 format=3 uid="uid://de4njslgpw7sc"]
 
 [ext_resource type="Texture2D" uid="uid://bqygu43i28ylo" path="res://assets/character/Character Idle 48x48.png" id="1_mpnvq"]
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_xmsiu"]
@@ -81,6 +81,15 @@ _data = {
 "light": SubResource("Animation_r815k")
 }
 
+[sub_resource type="Gradient" id="Gradient_ts02l"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_dpjvk"]
+gradient = SubResource("Gradient_ts02l")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.802752, 0.137615)
+
 [node name="CharacterBody2D" type="CharacterBody2D" groups=["player"]]
 script = ExtResource("1_xmsiu")
 
@@ -104,10 +113,11 @@ libraries = {
 }
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
+visible = false
 position = Vector2(3.405, 1.67)
 enabled = false
 color = Color(1, 0.509804, 0.988235, 1)
-energy = 12.07
+energy = 2.62
 shadow_enabled = true
 shadow_color = Color(0, 0, 0, 1)
 shadow_filter = 2
@@ -121,3 +131,6 @@ visible = false
 position = Vector2(0, -39)
 scale = Vector2(0.11125, 0.11125)
 texture = ExtResource("6_agqwy")
+
+[node name="PointLight2D2" type="PointLight2D" parent="."]
+texture = SubResource("GradientTexture2D_dpjvk")

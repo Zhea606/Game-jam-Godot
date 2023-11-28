@@ -11,7 +11,7 @@ const gravity = 15
 # Sprite del personaje en movimiento
 @onready var spriteWalking = $SpriteWalk
 @onready var animationPlayer = $AnimationPlayer
-@onready var light = $PointLight2D
+@onready var light = $PointLight2D2
 # Notificacion de interaccion con objeto
 @onready var notif = $notif
 

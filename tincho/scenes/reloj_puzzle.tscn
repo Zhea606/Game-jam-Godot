@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://bclk0xb77w5h3"]
+
+[ext_resource type="Texture2D" uid="uid://be03svmhfjtto" path="res://assets/puzzles/reloj-pendulo.png" id="1_c1xrm"]
+[ext_resource type="Script" path="res://scripts/reloj_puzzle.gd" id="1_u6krb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p4aye"]
+size = Vector2(118, 428)
+
+[node name="reloj_pendulo" type="Area2D"]
+script = ExtResource("1_u6krb")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_c1xrm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 2)
+shape = SubResource("RectangleShape2D_p4aye")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[connection signal="input_event" from="." to="." method="_on_input_event"]
