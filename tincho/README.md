@@ -22,6 +22,9 @@
   - [Crear grupos](#crear-grupos)
   - [Verificar grupo](#verificar-grupo)
   - [Llamar a funcion de un grupo](#llamar-a-funcion-de-un-grupo)
+* [Clases y Herencia](#clases-y-herencia)
+  - [Clases](#clases)
+  - [Herencia](#herencia) 
 
 
 
@@ -298,4 +301,37 @@ Código:
 ```
 # Llamar a la función stop_player() en todos los objetos pertenecientes al grupo player
 get_tree().call_group("player","stop_player")
+```
+
+## Clases y Herencia
+### Clases
+- Para crear una clase, se puede usar la palabra reservada classe_name. Ej.
+```
+extends Node2D
+
+class_name ClasePuzzles
+```
+- Para inicializar una clase se usa la función _init(). Ej.
+```
+class_name ClasePuzzles
+
+var tipo: String
+var nombre: StringName
+
+func _init(nombre,tipo):
+	self.tipo = tipo
+	self.nombre = nombre
+```
+- Para crear un objeto de una clase, se debe usar la función new(). Ej.
+```
+func _ready():
+	puzzle1 = ClasePuzzles.new("Puzzle Reloj","Interactivo")
+	add_child(puzzle1)
+```
+### Herencia
+- Para heredar una clase, se debe usar la palabra reservada extends y el nombre de la clase. Ej.
+```
+extends ClasePuzzles
+
+class_name PuzzleReloj
 ```
