@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=3 uid="uid://bgnfbljruu4dm"]
+
+[ext_resource type="Script" path="res://juego.gd" id="1_2uuhm"]
+[ext_resource type="PackedScene" uid="uid://dre2gs8vp6612" path="res://enemigos.tscn" id="2_i5vbl"]
+[ext_resource type="PackedScene" uid="uid://oxilofq7qpbo" path="res://character_jugador.tscn" id="3_xntfn"]
+[ext_resource type="Texture2D" uid="uid://c0or0r7jvr5ja" path="res://Free Sprites/JEMA GER 1449-02.jpg" id="4_yvjk5"]
+
+[node name="Juego" type="Node"]
+script = ExtResource("1_2uuhm")
+
+[node name="JemaGer1449-02" type="Sprite2D" parent="."]
+show_behind_parent = true
+position = Vector2(634.98, 361)
+scale = Vector2(0.160567, 0.103779)
+texture = ExtResource("4_yvjk5")
+
+[node name="Enemigo 1" parent="." instance=ExtResource("2_i5vbl")]
+position = Vector2(969, 263)
+
+[node name="Enemigo 2" parent="." instance=ExtResource("2_i5vbl")]
+position = Vector2(131, 283)
+
+[node name="Jugador" parent="." instance=ExtResource("3_xntfn")]
+position = Vector2(559, 282)
+
+[node name="Enemigo 3" parent="." instance=ExtResource("2_i5vbl")]
+position = Vector2(562, 530)
+
+[node name="Enemigo 4" parent="." instance=ExtResource("2_i5vbl")]
+position = Vector2(551, 89)
+
+[node name="EnemyRespawn" type="Timer" parent="."]
+wait_time = 0.5
+autostart = true
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(2, 708)
+
+[connection signal="timeout" from="EnemyRespawn" to="." method="_on_enemy_respawn_timeout"]

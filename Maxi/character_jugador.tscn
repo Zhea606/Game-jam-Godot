@@ -1,0 +1,80 @@
+[gd_scene load_steps=9 format=3 uid="uid://oxilofq7qpbo"]
+
+[ext_resource type="Script" path="res://character_jugador.gd" id="1_dybqd"]
+[ext_resource type="Texture2D" uid="uid://btr3j3yb3m32h" path="res://Asset Packs 1-3 (final)/Asset Pack-V3/Player Sword Idle/Player Sword Idle 48x48.png" id="2_25on6"]
+[ext_resource type="Script" path="res://AnimacionIdle.gd" id="3_ehu0l"]
+
+[sub_resource type="Animation" id="Animation_hx2xi"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_6sv84"]
+resource_name = "idle"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 9]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_c2x0l"]
+_data = {
+"RESET": SubResource("Animation_hx2xi"),
+"idle": SubResource("Animation_6sv84")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_532j4"]
+size = Vector2(73, 109)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qrdyq"]
+radius = 42.0
+height = 122.0
+
+[node name="Jugador" type="CharacterBody2D" groups=["Jugador"]]
+position = Vector2(3, -2)
+script = ExtResource("1_dybqd")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(4, 4)
+texture = ExtResource("2_25on6")
+hframes = 10
+
+[node name="AnimacionIdle" type="AnimationPlayer" parent="Sprite2D"]
+autoplay = "idle"
+libraries = {
+"": SubResource("AnimationLibrary_c2x0l")
+}
+script = ExtResource("3_ehu0l")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-3.5, 10.5)
+shape = SubResource("RectangleShape2D_532j4")
+
+[node name="Detection" type="Area2D" parent="."]
+position = Vector2(-2, 6)
+metadata/_edit_group_ = true
+
+[node name="DetectionCollisionShape2D" type="CollisionShape2D" parent="Detection"]
+shape = SubResource("CapsuleShape2D_qrdyq")
+
+[connection signal="body_entered" from="Detection" to="." method="_on_detection_body_entered"]

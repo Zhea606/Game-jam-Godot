@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://b50bcqeaoubfo"]
+
+[ext_resource type="Script" path="res://proyectil.gd" id="1_8eel5"]
+[ext_resource type="Texture2D" uid="uid://b00yp6bkockrf" path="res://Free Sprites/pngwing.com.png" id="2_rvq8b"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_k0d18"]
+radius = 21.2132
+
+[node name="Proyectil" type="Area2D"]
+script = ExtResource("1_8eel5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_k0d18")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_rvq8b")

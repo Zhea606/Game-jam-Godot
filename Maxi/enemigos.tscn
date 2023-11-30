@@ -1,0 +1,66 @@
+[gd_scene load_steps=8 format=3 uid="uid://dre2gs8vp6612"]
+
+[ext_resource type="Script" path="res://enemigos.gd" id="1_mgkk2"]
+[ext_resource type="Texture2D" uid="uid://b43tusgi8d1jp" path="res://Free Sprites/Bat_0000_dark.png" id="2_p4ba3"]
+[ext_resource type="Script" path="res://AnimacionBat.gd" id="3_fwnxh"]
+
+[sub_resource type="Animation" id="Animation_a3i3a"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_7kxls"]
+resource_name = "batMove"
+length = 0.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 1, 2]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gk221"]
+_data = {
+"RESET": SubResource("Animation_a3i3a"),
+"batMove": SubResource("Animation_7kxls")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cbt6p"]
+size = Vector2(69, 95.5)
+
+[node name="CharacterEnemigos" type="CharacterBody2D" groups=["Enemigo"]]
+position = Vector2(43, 35)
+script = ExtResource("1_mgkk2")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_p4ba3")
+hframes = 9
+vframes = 6
+
+[node name="AnimacionBat" type="AnimationPlayer" parent="Sprite2D"]
+libraries = {
+"": SubResource("AnimationLibrary_gk221")
+}
+script = ExtResource("3_fwnxh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-4, -23.25)
+shape = SubResource("RectangleShape2D_cbt6p")
