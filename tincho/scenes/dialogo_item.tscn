@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://bgxygv7uerjbe"]
+[gd_scene load_steps=8 format=3 uid="uid://bgxygv7uerjbe"]
 
 [ext_resource type="Script" path="res://scripts/dialogo_item.gd" id="1_4ct3n"]
+[ext_resource type="Texture2D" uid="uid://d04cksdvexpmi" path="res://assets/propio/fondo-negro-80.png" id="2_uy64p"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_aqpgs"]
 font_size = 35
@@ -79,15 +80,13 @@ grow_vertical = 2
 script = ExtResource("1_4ct3n")
 metadata/_edit_vertical_guides_ = [80.0, 144.0]
 
-[node name="ColorRect" type="ColorRect" parent="."]
-layout_mode = 0
-offset_left = 202.0
-offset_top = 431.0
-offset_right = 1130.0
-offset_bottom = 620.0
-color = Color(0, 0, 0, 1)
-
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+offset_top = 433.0
+offset_right = 1151.0
+offset_bottom = 624.0
+texture = ExtResource("2_uy64p")
 
 [node name="titulo" type="Label" parent="CanvasLayer"]
 offset_left = 259.0
@@ -111,10 +110,10 @@ visible_characters = 0
 visible_ratio = 0.0
 
 [node name="animation_text" type="AnimationPlayer" parent="CanvasLayer"]
-speed_scale = 1.5
 libraries = {
 "": SubResource("AnimationLibrary_77wmb")
 }
+speed_scale = 1.5
 
 [node name="image_item" type="TextureRect" parent="CanvasLayer"]
 anchors_preset = -1

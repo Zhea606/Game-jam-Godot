@@ -82,10 +82,10 @@ func _physics_process(_delta):
 
 # Funcion de control para pausar el personaje cuando sea necesario
 func stop_player():
-	print("Jugador Pausado")
+	#print("Jugador Pausado")
 	is_paused = true
 
 # Funcion de control para renaudar el personaje luego de ser pausado
 func resume_player():
-	print("Jugador Renaudado")
+	#print("Jugador Renaudado")
 	is_paused = false

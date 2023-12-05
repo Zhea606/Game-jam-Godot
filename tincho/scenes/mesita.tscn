@@ -1,0 +1,89 @@
+[gd_scene load_steps=8 format=3 uid="uid://qkuy7pipsmec"]
+
+[ext_resource type="Script" path="res://scripts/mesita.gd" id="1_cj136"]
+[ext_resource type="Texture2D" uid="uid://2f2e38nf55po" path="res://assets/propio/papel_gastado1.png" id="1_k2too"]
+[ext_resource type="Texture2D" uid="uid://dkcrqqbv3ve8v" path="res://assets/objects/pluma.png" id="2_7xseu"]
+[ext_resource type="Texture2D" uid="uid://d04cksdvexpmi" path="res://assets/propio/fondo-negro-80.png" id="3_heh20"]
+[ext_resource type="Texture2D" uid="uid://byk3wls0e3ws4" path="res://assets/UI/salir.png" id="4_opqrw"]
+[ext_resource type="FontFile" uid="uid://cdqi5vpe2381w" path="res://fonts/Stay Wild.ttf" id="5_0s2l6"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_24nta"]
+font = ExtResource("5_0s2l6")
+font_size = 17
+font_color = Color(0.556863, 0.517647, 0.431373, 1)
+
+[node name="mesita" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_cj136")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+offset_left = 101.0
+offset_right = 1054.0
+offset_bottom = 650.0
+color = Color(0.258824, 0, 0.00392157, 1)
+
+[node name="papel" type="TextureButton" parent="CanvasLayer"]
+offset_left = 246.0
+offset_top = 63.0
+offset_right = 667.0
+offset_bottom = 609.0
+rotation = 6.21337
+texture_normal = ExtResource("1_k2too")
+stretch_mode = 5
+flip_v = true
+
+[node name="pluma" type="TextureButton" parent="CanvasLayer"]
+offset_left = 484.0
+offset_top = 338.0
+offset_right = 893.0
+offset_bottom = 577.0
+texture_normal = ExtResource("2_7xseu")
+stretch_mode = 5
+
+[node name="Fondo" type="TextureRect" parent="CanvasLayer"]
+visible = false
+offset_right = 1154.0
+offset_bottom = 651.0
+texture = ExtResource("3_heh20")
+
+[node name="salir" type="TextureButton" parent="CanvasLayer/Fondo"]
+layout_mode = 0
+offset_left = 1065.0
+offset_top = 22.0
+offset_right = 1127.0
+offset_bottom = 84.0
+texture_normal = ExtResource("4_opqrw")
+stretch_mode = 5
+
+[node name="imagen" type="TextureRect" parent="CanvasLayer/Fondo"]
+layout_mode = 0
+offset_left = 219.0
+offset_top = 58.0
+offset_right = 983.0
+offset_bottom = 592.0
+texture = ExtResource("1_k2too")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="texto_diario" type="Label" parent="CanvasLayer/Fondo"]
+visible = false
+layout_mode = 0
+offset_left = 421.0
+offset_top = 92.0
+offset_right = 796.0
+offset_bottom = 552.0
+text = "Viernes 31 de octubre de 1924
+
+       Querida Katy: Hoy mi humor no es de lo mejor, a pesar de que hoy sea dia de Hallowen, mis ánimos se desbordaron con aquello que te contaré más adelante. Por cierto, sabías que Hallowen es de origen Celta? No lo crees curioso? En fin, no quiero aburrirte con datos superfluos, lo que concierne esto que te escribo hoy es un acontecimiento que tuvo lugar anoche. 
+    Luego de la cena, mamá y papá se pusieron a debatir sobre las vacaciones. Papá queria realizar un viaje hacia algun país asiático, mamá por su lado quería volver a visitar el Reino Unido. Ya te conté hace unos cuantos días que tenía la curiosidad de visitar sudamerica. Pero ya sabes como es mamá, ni bien  quise realizar un comentario, me calló con el pretexto de que no era propio interrumpir una discusión entre adultos. Ojalá mamá fuese mas afable como papá. Finalmente papá se salió con la suya. "
+label_settings = SubResource("LabelSettings_24nta")
+autowrap_mode = 2
+
+[node name="Solved" type="Node2D" parent="CanvasLayer"]

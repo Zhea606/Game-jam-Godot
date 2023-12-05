@@ -1,0 +1,133 @@
+[gd_scene load_steps=13 format=3 uid="uid://b40v5ybsl652e"]
+
+[ext_resource type="Script" path="res://scripts/cajon.gd" id="1_hef0f"]
+[ext_resource type="Texture2D" uid="uid://csnf5jh1i2eyc" path="res://assets/propio/cajon.png" id="2_7vwqr"]
+[ext_resource type="Texture2D" uid="uid://bdj5jg1bdi62k" path="res://assets/objects/disco.png" id="3_amrd3"]
+[ext_resource type="Texture2D" uid="uid://bm6tbx3gsroe" path="res://assets/objects/carta.png" id="3_hahw5"]
+[ext_resource type="Texture2D" uid="uid://ds0bqq6yvclav" path="res://assets/objects/tijera.png" id="4_sa1nr"]
+[ext_resource type="Texture2D" uid="uid://2f2e38nf55po" path="res://assets/propio/papel_gastado1.png" id="4_y8mr5"]
+[ext_resource type="Texture2D" uid="uid://cy2cq85iiuisp" path="res://assets/objects/lapiz.png" id="6_oh1n0"]
+[ext_resource type="Texture2D" uid="uid://vo1aai5cr5a4" path="res://assets/objects/martillo.png" id="7_iky8q"]
+[ext_resource type="Texture2D" uid="uid://d04cksdvexpmi" path="res://assets/propio/fondo-negro-80.png" id="8_it8mm"]
+[ext_resource type="Texture2D" uid="uid://byk3wls0e3ws4" path="res://assets/UI/salir.png" id="9_giacb"]
+[ext_resource type="FontFile" uid="uid://cdqi5vpe2381w" path="res://fonts/Stay Wild.ttf" id="11_jovyg"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_3tpit"]
+font = ExtResource("11_jovyg")
+font_size = 17
+font_color = Color(0.556863, 0.517647, 0.431373, 1)
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hef0f")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+offset_right = 1154.0
+offset_bottom = 647.0
+texture = ExtResource("2_7vwqr")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="CanvasGroup" type="CanvasGroup" parent="CanvasLayer"]
+
+[node name="disco" type="TextureButton" parent="CanvasLayer/CanvasGroup"]
+offset_left = 547.0
+offset_top = -50.0
+offset_right = 1025.0
+offset_bottom = 490.0
+texture_normal = ExtResource("3_amrd3")
+stretch_mode = 6
+
+[node name="papel" type="TextureButton" parent="CanvasLayer/CanvasGroup"]
+offset_left = 354.0
+offset_top = 90.0
+offset_right = 815.0
+offset_bottom = 551.0
+rotation = 0.1309
+texture_normal = ExtResource("4_y8mr5")
+stretch_mode = 5
+
+[node name="tijera" type="TextureButton" parent="CanvasLayer/CanvasGroup"]
+offset_left = 382.0
+offset_top = 372.0
+offset_right = 773.0
+offset_bottom = 560.0
+rotation = -0.671952
+texture_normal = ExtResource("4_sa1nr")
+stretch_mode = 6
+
+[node name="carta" type="TextureButton" parent="CanvasLayer/CanvasGroup"]
+offset_left = 202.0
+offset_top = 324.0
+offset_right = 625.0
+offset_bottom = 595.0
+texture_normal = ExtResource("3_hahw5")
+stretch_mode = 6
+
+[node name="lapiz" type="TextureButton" parent="CanvasLayer/CanvasGroup"]
+offset_left = 834.0
+offset_top = 298.0
+offset_right = 929.0
+offset_bottom = 651.0
+rotation = 0.663225
+texture_normal = ExtResource("6_oh1n0")
+stretch_mode = 6
+
+[node name="martillo" type="TextureButton" parent="CanvasLayer/CanvasGroup"]
+offset_left = 165.0
+offset_top = 50.0
+offset_right = 445.0
+offset_bottom = 416.0
+rotation = -0.235619
+texture_normal = ExtResource("7_iky8q")
+stretch_mode = 6
+
+[node name="fondo" type="TextureRect" parent="CanvasLayer"]
+visible = false
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("8_it8mm")
+
+[node name="imagen" type="TextureRect" parent="CanvasLayer/fondo"]
+layout_mode = 0
+offset_left = 174.0
+offset_top = 58.0
+offset_right = 938.0
+offset_bottom = 592.0
+texture = ExtResource("4_y8mr5")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="salir" type="TextureButton" parent="CanvasLayer/fondo"]
+layout_mode = 0
+offset_left = 1065.0
+offset_top = 22.0
+offset_right = 1127.0
+offset_bottom = 84.0
+texture_normal = ExtResource("9_giacb")
+stretch_mode = 5
+
+[node name="texto_diario" type="Label" parent="CanvasLayer/fondo"]
+visible = false
+layout_mode = 0
+offset_left = 382.0
+offset_top = 92.0
+offset_right = 757.0
+offset_bottom = 552.0
+text = "Miércoles 8 de julio de 1942 
+
+Querida Kitty: Parece que hubieran pasado años entre el domingo a la mañana y hoy. ¡Cuántos acontecimientos! Como si el mundo entero se hubiera trastornado de repente. Sin embargo, ya ves, Kitty, todavía vivo, y, como dice papá, es lo principal. Sí, en efecto, vivo todavía, pero no me preguntes dónde ni cómo. 
+Tú no comprendes nada de nada hoy ¿verdad? Por eso me es necesario, primero, contarte lo sucedido a partir del domingo a la tarde. A las tres y media (Harry acababa de irse para volver más tarde) llamaron a nuestra puerta. Yo no lo oí, porque estaba leyendo en la terraza, perezosamente reclinada al sol en una silla de lona. De pronto, Margot apareció por la puerta de la cocina, visiblemente turbada. -Papá ha recibido una citación de la SS -cuchicheó-. Mamá acaba de salir para ir a buscar al señor Van Daan."
+label_settings = SubResource("LabelSettings_3tpit")
+autowrap_mode = 2
+
+[node name="Solved" type="Node2D" parent="CanvasLayer"]
+
+[connection signal="pressed" from="CanvasLayer/fondo/salir" to="." method="_on_salir_pressed"]

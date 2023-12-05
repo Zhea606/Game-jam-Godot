@@ -1,0 +1,57 @@
+[gd_scene load_steps=4 format=3 uid="uid://dau2m7grvvxtl"]
+
+[ext_resource type="Texture2D" uid="uid://byct8ftvuu4oa" path="res://assets/puzzles/mapamundi-pixel.png" id="1_1jau3"]
+[ext_resource type="Script" path="res://scripts/puzzle_mapa.gd" id="1_x6o3k"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ebwcb"]
+size = Vector2(4, 5)
+
+[node name="puzzle_mapa" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_x6o3k")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="mapa" type="TextureRect" parent="CanvasLayer"]
+offset_right = 1154.0
+offset_bottom = 646.0
+texture = ExtResource("1_1jau3")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextureButton" type="TextureButton" parent="CanvasLayer"]
+offset_left = 152.0
+offset_top = 100.0
+offset_right = 1014.0
+offset_bottom = 588.0
+
+[node name="Solved" type="TextureRect" parent="CanvasLayer"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="solucion" type="Area2D" parent="CanvasLayer"]
+position = Vector2(375, 479)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CanvasLayer/solucion"]
+polygon = PackedVector2Array(4, 63, 4, 47, -4, 47, -4, 31, 4, 31, 5, 15, 12, 14, 12, -3, 21, -2, 20, -10, 28, -11, 29, -18, 37, -17, 37, -34, 44, -35, 45, -59, 37, -59, 36, -67, 21, -66, 21, -74, 5, -75, 4, -90, -12, -92, -12, -98, -28, -99, -28, -90, -44, -92, -44, -76, -52, -75, -52, -50, -44, -50, -43, -44, -37, -43, -36, -34, -28, -35, -28, -10, -20, -10, -20, -1, -28, -1, -28, 14, -20, 14, -20, 55, -11, 54, -12, 63)
+
+[node name="Pin" type="Area2D" parent="CanvasLayer"]
+position = Vector2(787, 271)
+
+[node name="PinImage" type="ColorRect" parent="CanvasLayer/Pin"]
+offset_left = -8.0
+offset_top = -7.0
+offset_right = 8.0
+offset_bottom = 8.0
+pivot_offset = Vector2(8, 8)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/Pin"]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_ebwcb")
+
+[connection signal="pressed" from="CanvasLayer/TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="area_shape_entered" from="CanvasLayer/solucion" to="." method="_on_solucion_area_shape_entered"]
+[connection signal="area_shape_exited" from="CanvasLayer/solucion" to="." method="_on_solucion_area_shape_exited"]

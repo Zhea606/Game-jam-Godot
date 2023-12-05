@@ -1063,19 +1063,21 @@ scale = Vector2(2.48471, 1.83486)
 texture = ExtResource("2_h0aoy")
 
 [node name="cRelieve" type="CanvasGroup" parent="."]
+visible = false
 
 [node name="Sprite2D2" type="Sprite2D" parent="cRelieve"]
+visible = false
 position = Vector2(451, -48)
 scale = Vector2(0.545, 0.545)
 texture = SubResource("CanvasTexture_l5yuo")
 
 [node name="Sprite2D" type="Sprite2D" parent="cRelieve"]
+visible = false
 position = Vector2(129, -48)
 scale = Vector2(0.545, 0.545)
 texture = SubResource("CanvasTexture_l5yuo")
 
 [node name="cRelieve2" type="CanvasGroup" parent="."]
-visible = false
 self_modulate = Color(0.45098, 0.392157, 0.384314, 1)
 
 [node name="Sprite2D2" type="Sprite2D" parent="cRelieve2"]
@@ -1153,7 +1155,7 @@ position = Vector2(48, -17)
 color = Color(0.529412, 0.694118, 0.968627, 1)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-color = Color(0.12549, 0.12549, 0.12549, 1)
+color = Color(0.0627451, 0.0627451, 0.0627451, 1)
 
 [node name="spawn_player" type="Node2D" parent="."]
 position = Vector2(16, -22)

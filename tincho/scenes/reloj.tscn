@@ -1,8 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://kmlqtd3mxg3n"]
+[gd_scene load_steps=8 format=3 uid="uid://kmlqtd3mxg3n"]
 
 [ext_resource type="Script" path="res://scripts/reloj.gd" id="1_7a30m"]
 [ext_resource type="Texture2D" uid="uid://ctq7yc0b56px0" path="res://assets/puzzles/reloj-pendulo-sin-agujas.png" id="2_e2o7y"]
-[ext_resource type="Texture2D" uid="uid://dfxwnjl4b2006" path="res://assets/propio/puzzle_reloj.png" id="3_cd0m7"]
+[ext_resource type="AudioStream" uid="uid://bi8cm81oot1w5" path="res://sounds/lock-the-door-46014.mp3" id="3_m6ld0"]
+[ext_resource type="Texture2D" uid="uid://d04cksdvexpmi" path="res://assets/propio/fondo-negro-80.png" id="3_pym2j"]
+[ext_resource type="Texture2D" uid="uid://djhbv3ckcvte8" path="res://assets/items/reloj-mano.png" id="4_aaj8f"]
+[ext_resource type="FontFile" uid="uid://cyvj5dnxk8q72" path="res://fonts/pixelart.ttf" id="5_l4jrt"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_pg0vg"]
+font = ExtResource("5_l4jrt")
+font_size = 46
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -17,23 +24,10 @@ metadata/_edit_vertical_guides_ = [564.0]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="fondo" type="ColorRect" parent="CanvasLayer"]
-offset_left = 209.0
-offset_top = -2.0
-offset_right = 916.0
-offset_bottom = 646.0
-color = Color(0.4, 0.223529, 0.192157, 1)
-
 [node name="Sprite2D" type="Sprite2D" parent="CanvasLayer"]
 position = Vector2(561, 1164)
 scale = Vector2(7.55, 7.55)
 texture = ExtResource("2_e2o7y")
-
-[node name="img_reloj" type="Sprite2D" parent="CanvasLayer"]
-visible = false
-position = Vector2(564, 331)
-scale = Vector2(19.065, 19.065)
-texture = ExtResource("3_cd0m7")
 
 [node name="hour_arrow" type="ColorRect" parent="CanvasLayer"]
 offset_left = 554.0
@@ -53,7 +47,7 @@ offset_left = 557.0
 offset_top = 163.0
 offset_right = 571.0
 offset_bottom = 341.0
-rotation = 1.5708
+rotation = 0.523599
 pivot_offset = Vector2(7, 170)
 color = Color(0.309804, 0.227451, 0.152941, 1)
 
@@ -61,6 +55,33 @@ color = Color(0.309804, 0.227451, 0.152941, 1)
 layout_mode = 0
 offset_right = 14.0
 offset_bottom = 161.0
+
+[node name="Solved" type="TextureRect" parent="CanvasLayer"]
+visible = false
+offset_left = 6.10352e-05
+offset_top = 1.52588e-05
+offset_right = 1153.0
+offset_bottom = 649.0
+texture = ExtResource("3_pym2j")
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/Solved"]
+position = Vector2(562, 268)
+scale = Vector2(12, 12)
+texture = ExtResource("4_aaj8f")
+
+[node name="Label" type="Label" parent="CanvasLayer/Solved"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 459.0
+offset_right = 1149.0
+offset_bottom = 645.0
+text = "NUEVO ITEM DESBLOQUEADO!"
+label_settings = SubResource("LabelSettings_pg0vg")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="unlock" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_m6ld0")
 
 [connection signal="pressed" from="CanvasLayer/hour_arrow/hour_button" to="." method="_on_hour_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/minute_arrow/minute_button" to="." method="_on_minute_button_pressed"]

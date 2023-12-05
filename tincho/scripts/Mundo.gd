@@ -6,14 +6,18 @@ extends Node2D
 # Precargar escenas a instanciar
 var player_scene = preload("res://scenes/player.tscn")
 var camera_scene = preload("res://scenes/camera.tscn")
-var object_scene = preload("res://scenes/objeto1.tscn")
 var player
 var camera
+
+@onready var lista_objetos: Dictionary
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	lista_objetos = {
+		"Pocion de la suerte": Item.new("res://assets/propio/potion.png",Vector2(1,1),$spawn_objeto.position,"Pocion de la suerte","Esta es la pocion de la suerte."),
+		"Huevo de la suerte": Item.new("res://assets/items/09.png",Vector2(1,1),$spawn_objeto2.position,"Huevo de la suerte","Re que era todo de la suerte xd.")
+	}
+	instantiate_objects()
 	instantiate_player()
-	set_object($spawn_objeto.position,"Pocion de la suerte","Esta es la pocion de la suerte.","res://assets/propio/potion.png")
-	set_object($spawn_objeto2.position,"Huevo de la suerte","Re que era todo de la suerte xd.","res://assets/items/09.png")
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -39,10 +43,6 @@ func instantiate_camera():
 	# Agregar la camara como hija del personaje
 	player.add_child(camera)
 
-func set_object(position_obj: Vector2,name_obj: String,description: String,image_path: String):
-	var objeto = object_scene.instantiate()
-	objeto.position = position_obj
-	objeto.get_child(0).nombre = name_obj
-	objeto.get_child(0).descripcion = description
-	objeto.get_child(0).path_image = image_path
-	add_child(objeto)
+func instantiate_objects() -> void:
+	for obj in lista_objetos:
+		add_child(lista_objetos[obj])

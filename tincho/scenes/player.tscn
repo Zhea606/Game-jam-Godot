@@ -107,10 +107,10 @@ texture = ExtResource("3_oqjkb")
 hframes = 8
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-speed_scale = 0.8
 libraries = {
 "": SubResource("AnimationLibrary_7dh6i")
 }
+speed_scale = 0.8
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
 visible = false
