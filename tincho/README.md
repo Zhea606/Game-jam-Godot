@@ -24,7 +24,9 @@
   - [Llamar a funcion de un grupo](#llamar-a-funcion-de-un-grupo)
 * [Clases y Herencia](#clases-y-herencia)
   - [Clases](#clases)
-  - [Herencia](#herencia) 
+  - [Herencia](#herencia)
+* [Puzzles](#puzzles)
+  - [Guardar datos en formato JSON](#guardar-datos-en-formato-json)
 
 
 
@@ -339,7 +341,7 @@ class_name PuzzleReloj
 
 ## Puzzles
 ### Guardar datos en formato JSON
-Para guardar el estado de los puzzles, se creó una clase llamada [PuzzleData](https://github.com/Zhea606/Game-jam-Godot/blob/6e47f370f65c6ce16b5b9e0eb35494f2d7856297/tincho/scripts/puzzlesdata.gd), que a su vez utiliza dos clases de Godot
+Para guardar el estado de los puzzles, se creó una clase llamada [PuzzleData](https://github.com/Zhea606/Game-jam-Godot/blob/3233e108c4fc19fc13f555123a07410114c16885/tincho/scripts/puzzlesdata.gd), que a su vez utiliza dos clases de Godot
 - [FileAccess](https://docs.godotengine.org/es/4.x/classes/class_fileaccess.html): Para gestionar archivos en el sistema.
 - [JSON](https://docs.godotengine.org/es/4.x/classes/class_json.html): Para manejar el formato JSON
 
