@@ -8,6 +8,8 @@ extends Node2D
 # Lista para instanciar objetos
 @onready var lista_objetos: Dictionary
 
+@onready var puzzles = PuzzleData.new("res://savedata/puzzles_data.json")
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	lista_objetos = {
@@ -18,7 +20,7 @@ func _ready():
 		}
 	instantiate_objects()
 	instantiate_player()
-	var puzzles = PuzzleData.new("res://savedata/puzzles_data.json")
+
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -43,4 +45,7 @@ func instantiate_objects() -> void:
 		add_child(lista_objetos[obj])
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	pass
+	if puzzles.get_puzzle_state("1954"):
+		print("El puzzle de 1954 ha sido resuelto")
+	else:
+		print("El puzzle de 1954 aun no ha sido resuelto")

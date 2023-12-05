@@ -336,3 +336,28 @@ extends ClasePuzzles
 
 class_name PuzzleReloj
 ```
+
+## Puzzles
+### Guardar datos en formato JSON
+Para guardar el estado de los puzzles, se creó una clase llamada [PuzzleData](https://github.com/Zhea606/Game-jam-Godot/blob/6e47f370f65c6ce16b5b9e0eb35494f2d7856297/tincho/scripts/puzzlesdata.gd), que a su vez utiliza dos clases de Godot
+- [FileAccess](https://docs.godotengine.org/es/4.x/classes/class_fileaccess.html): Para gestionar archivos en el sistema.
+- [JSON](https://docs.godotengine.org/es/4.x/classes/class_json.html): Para manejar el formato JSON
+
+#### Inicializar objeto PuzzleData
+Crea un objeto PuzzleData que lleva como parámetro la ruta del archivo JSON que va guardar el estado de los puzzles.
+```
+puzzle_data = PuzzleData.new("res://ruta/hacia/archivo")
+```
+_Si el archivo no existe, lo creará con la función create\_json\_file_
+#### Actualizar puzzle
+Para actualizar el estado de un puzzle existe la función update_puzzle que toma como parámetro el número del puzzle (en formato String) y un valor bool.
+```
+# Actualizar el puzzle de 1954 a resuelto
+puzzle_data.update_puzzle("1954",true)
+```
+#### Obtner estado de puzzle
+Para obtener el estado de un puzzle, existe la función get_puzzle_state que toma como parámetro el número del puzzle (en formato String) y devuelve un valor booleano.
+```
+if puzzle_data.get_puzzle_state("1954"):
+	print("Puzzle de 1954 resuelto")
+```
