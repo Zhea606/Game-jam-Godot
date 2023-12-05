@@ -186,7 +186,7 @@ func randomOffset() -> Vector2:
 - Ref: [Tutorial Godot engine 3D prender luz tipo linterna con spotlight](https://youtu.be/jCGwkTnCTjM?si=tK9nB0m3CDvv5q9P)
 
 - Agregar entrada en Input Map (Project Settigns -> Input Map), en este caso "switch_light"
-
+lases
 Código:
 ```
 extends CharacterBody2D
@@ -304,6 +304,7 @@ get_tree().call_group("player","stop_player")
 ```
 
 ## Clases y Herencia
+[Video Tutorial](https://www.youtube.com/watch?v=8WhfPc3sT1c)
 ### Clases
 - Para crear una clase, se puede usar la palabra reservada classe_name. Ej.
 ```
