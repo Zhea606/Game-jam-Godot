@@ -1,0 +1,84 @@
+[gd_scene load_steps=9 format=3 uid="uid://cmen641xd2l8n"]
+
+[ext_resource type="Texture2D" uid="uid://qn5tthlpok4i" path="res://Free Sprites/sueloPuzzle.png" id="1_1ja7v"]
+[ext_resource type="Script" path="res://puzzle_2023.gd" id="1_44cl1"]
+[ext_resource type="Texture2D" uid="uid://c0eisars35cnm" path="res://itemPuzzle.png" id="3_m4ngk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2fmbx"]
+size = Vector2(972.5, 217.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pt4o0"]
+size = Vector2(673, 262)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8pcnb"]
+size = Vector2(575, 268)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mg4u1"]
+size = Vector2(1041, 252)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8y6hr"]
+size = Vector2(218, 247)
+
+[node name="puzzle2023" type="Node2D"]
+script = ExtResource("1_44cl1")
+
+[node name="SueloPuzzle" type="Sprite2D" parent="."]
+position = Vector2(648.761, 402)
+rotation = 1.5708
+scale = Vector2(3, 4.7818)
+texture = ExtResource("1_1ja7v")
+
+[node name="Button" type="Button" parent="."]
+offset_right = 295.0
+offset_bottom = 75.0
+text = "ATRAS"
+
+[node name="madera1" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="madera1"]
+position = Vector2(796.75, 109.25)
+shape = SubResource("RectangleShape2D_2fmbx")
+
+[node name="madera2" type="Area2D" parent="."]
+position = Vector2(45, 300)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="madera2"]
+position = Vector2(312.5, 64)
+shape = SubResource("RectangleShape2D_pt4o0")
+
+[node name="madera3" type="Area2D" parent="."]
+position = Vector2(830, 331)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="madera3"]
+position = Vector2(163.5, 30)
+shape = SubResource("RectangleShape2D_8pcnb")
+
+[node name="madera4" type="Area2D" parent="."]
+position = Vector2(479, 646)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="madera4"]
+position = Vector2(55.5, -14)
+shape = SubResource("RectangleShape2D_mg4u1")
+
+[node name="madera5" type="Area2D" parent="."]
+position = Vector2(1155, 643)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="madera5"]
+position = Vector2(20, -10.5)
+shape = SubResource("RectangleShape2D_8y6hr")
+
+[node name="ItemPuzzle" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(687, 411)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("3_m4ngk")
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="input_event" from="madera1" to="." method="_on_madera_1_input_event"]
+[connection signal="input_event" from="madera2" to="." method="_on_madera_2_input_event"]
+[connection signal="input_event" from="madera3" to="." method="_on_madera_3_input_event"]
+[connection signal="input_event" from="madera4" to="." method="_on_madera_4_input_event"]
+[connection signal="input_event" from="madera5" to="." method="_on_madera_5_input_event"]
+[connection signal="mouse_exited" from="madera5" to="." method="_on_madera_5_mouse_exited"]

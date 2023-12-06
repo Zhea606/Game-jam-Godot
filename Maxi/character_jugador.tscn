@@ -78,3 +78,4 @@ metadata/_edit_group_ = true
 shape = SubResource("CapsuleShape2D_qrdyq")
 
 [connection signal="body_entered" from="Detection" to="." method="_on_detection_body_entered"]
+[connection signal="body_exited" from="Detection" to="." method="_on_detection_body_exited"]
