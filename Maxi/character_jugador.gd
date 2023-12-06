@@ -4,7 +4,6 @@ class_name Jugador
 var speed = 400
 var direction = 0.0
 var texto = ""
-#@export_file('*.tscn') var cambiarEscena
 const gravedad = 600
 var proyectil = preload("res://proyectil.tscn")
 var jugadorPuzzle = false
@@ -43,7 +42,7 @@ func _on_detection_body_entered(body):
 
 	if body.is_in_group("Enemigo"):
 		body.morir()
-	#checkeamos estar parados sobre el puzzle
+	#checkeamos estar parados sobre el puzzle y que no haya sido resuelto ya
 	if body.is_in_group("puzzle") and autoLoadPuzzleResuelto:		
 		jugadorPuzzle = true
 		texto = convert(jugadorPuzzle,1)
