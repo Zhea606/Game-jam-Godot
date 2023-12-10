@@ -111,10 +111,10 @@ visible_characters = 0
 visible_ratio = 0.0
 
 [node name="animation_text" type="AnimationPlayer" parent="CanvasLayer"]
-speed_scale = 1.5
 libraries = {
 "": SubResource("AnimationLibrary_77wmb")
 }
+speed_scale = 1.5
 
 [node name="image_item" type="TextureRect" parent="CanvasLayer"]
 anchors_preset = -1

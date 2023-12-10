@@ -6,7 +6,7 @@ extends CanvasLayer
 #@onready var portrait: TextureRect = %Portrait
 @onready var dialogue_label: DialogueLabel = %DialogueLabel
 @onready var responses_menu: DialogueResponsesMenu = %ResponsesMenu
-@onready var dialogue_sound = $DialogueSound
+@onready var dialogue_sound: AudioStreamPlayer = $Dialogue_sound
 
 
 ## The dialogue resource
@@ -134,4 +134,6 @@ func _on_responses_menu_response_selected(response: DialogueResponse) -> void:
 
 
 func _on_dialogue_label_spoke(letter, letter_index, speed) -> void:
-	talk_sound.play()
+	if not letter in [".", ""]:
+		dialogue_sound.pitch_scale = randf_range(0.9, 1.1)
+		dialogue_sound.play()
