@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://clqeldck0fsej"
+path="res://.godot/imported/player_movement_D.dialogue-78a468765cfde1f2b78707ce72a522fd.tres"
+
+[deps]
+
+source_file="res://dialogues/player_movement_D.dialogue"
+dest_files=["res://.godot/imported/player_movement_D.dialogue-78a468765cfde1f2b78707ce72a522fd.tres"]
+
+[params]
+
+defaults=true
