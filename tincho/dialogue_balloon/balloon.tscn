@@ -1,10 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://73jm5qjy52vq"]
+[gd_scene load_steps=14 format=3 uid="uid://73jm5qjy52vq"]
 
 [ext_resource type="Script" path="res://dialogue_balloon/balloon.gd" id="1_4u26j"]
 [ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/dialogue_label.tscn" id="2_a8ve6"]
 [ext_resource type="Script" path="res://addons/dialogue_manager/dialogue_reponses_menu.gd" id="3_72ixx"]
-[ext_resource type="AudioStream" uid="uid://cp6j6lry0er50" path="res://sounds/writing_sound_dialogue.wav" id="4_hnt3n"]
-[ext_resource type="Texture2D" uid="uid://besbkxsp6dkjx" path="res://assets/ui/arrow.png" id="4_l2eac"]
+[ext_resource type="Texture2D" uid="uid://qndli5hsmr7y" path="res://assets/ui/arrow.png" id="4_l2eac"]
+[ext_resource type="AudioStream" uid="uid://c38cqk1boqkre" path="res://sounds/writing_2.wav" id="5_w7wuj"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_spyqn"]
 bg_color = Color(0, 0, 0, 1)
@@ -65,6 +65,41 @@ MarginContainer/constants/margin_left = 70
 MarginContainer/constants/margin_right = 30
 MarginContainer/constants/margin_top = 36
 Panel/styles/panel = SubResource("StyleBoxFlat_uy0d5")
+
+[sub_resource type="Animation" id="Animation_ctp85"]
+resource_name = "arrow"
+loop_mode = 1
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(116, -0.25, 0, 0.25, 0, 108, -0.25, 0, 0.25, 0, 116, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5, 1)
+}
+
+[sub_resource type="Animation" id="Animation_srvb1"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(116, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_uqs6x"]
+_data = {
+"RESET": SubResource("Animation_srvb1"),
+"arrow": SubResource("Animation_ctp85")
+}
 
 [node name="ExampleBalloon" type="CanvasLayer"]
 layer = 100
@@ -156,16 +191,23 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -736.0
-offset_top = -477.0
-offset_right = -224.0
-offset_bottom = 35.0
+offset_left = -69.0
+offset_top = -28.0
+offset_right = -29.0
+offset_bottom = 12.0
 grow_horizontal = 0
 grow_vertical = 0
 texture = ExtResource("4_l2eac")
+expand_mode = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Balloon/Indicator"]
+libraries = {
+"": SubResource("AnimationLibrary_uqs6x")
+}
+autoplay = "arrow"
 
 [node name="Dialogue_sound" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("4_hnt3n")
+stream = ExtResource("5_w7wuj")
 
 [connection signal="gui_input" from="Balloon" to="." method="_on_balloon_gui_input"]
 [connection signal="spoke" from="Balloon/Dialogue/HBoxContainer/VBoxContainer/DialogueLabel" to="." method="_on_dialogue_label_spoke"]
