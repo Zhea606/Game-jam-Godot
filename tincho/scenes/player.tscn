@@ -1,10 +1,11 @@
-[gd_scene load_steps=14 format=3 uid="uid://de4njslgpw7sc"]
+[gd_scene load_steps=15 format=3 uid="uid://de4njslgpw7sc"]
 
 [ext_resource type="Texture2D" uid="uid://bqygu43i28ylo" path="res://assets/character/Character Idle 48x48.png" id="1_mpnvq"]
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_xmsiu"]
 [ext_resource type="Texture2D" uid="uid://bdkdff73gidcl" path="res://assets/character/PlayerWalk 48x48.png" id="3_oqjkb"]
 [ext_resource type="Texture2D" uid="uid://c7wgamsk87svq" path="res://assets/propio/intentodeluz3.png" id="5_8tg2b"]
 [ext_resource type="Texture2D" uid="uid://cadcwbps0lm6u" path="res://assets/propio/notif.png" id="6_agqwy"]
+[ext_resource type="AudioStream" uid="uid://byvwpdcpk84pk" path="res://sounds/steps-wood2.ogg" id="6_vy2m5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0nvyd"]
 size = Vector2(15, 29)
@@ -94,6 +95,7 @@ fill_to = Vector2(0.802752, 0.137615)
 script = ExtResource("1_xmsiu")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
 texture = ExtResource("1_mpnvq")
 hframes = 10
 
@@ -102,7 +104,6 @@ position = Vector2(-0.5, 1.5)
 shape = SubResource("RectangleShape2D_0nvyd")
 
 [node name="SpriteWalk" type="Sprite2D" parent="."]
-visible = false
 texture = ExtResource("3_oqjkb")
 hframes = 8
 
@@ -134,3 +135,9 @@ texture = ExtResource("6_agqwy")
 
 [node name="PointLight2D2" type="PointLight2D" parent="."]
 texture = SubResource("GradientTexture2D_dpjvk")
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="StepsSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_vy2m5")
+volume_db = 5.0

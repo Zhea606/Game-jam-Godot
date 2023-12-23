@@ -15,6 +15,9 @@ const gravity = 15
 # Notificacion de interaccion con objeto
 @onready var notif = $notif
 
+# Variable del sonido de los pasos
+@onready var steps_sound = $StepsSound
+
 #Crear variable bool para pausar el personaje cuando sea necesario
 var is_paused = false
 
@@ -23,6 +26,7 @@ func _physics_process(_delta):
 	var friction = false
 
 	if Input.is_action_pressed("right_move") and !is_paused:
+		play_steps()
 		# Ocultar sprite de personaje parado cuando se presiona tecla de movimiento
 		sprite.visible = false
 		# Mostrar sprite de personaje en movimiento
@@ -40,6 +44,7 @@ func _physics_process(_delta):
 		# No rotar la luz de la linterna cuando se va hacia la derecha
 		light.rotation_degrees = 0
 	elif Input.is_action_pressed("left_move") and !is_paused:
+		play_steps()
 		sprite.visible = false
 		spriteWalking.visible = true
 		
@@ -65,6 +70,7 @@ func _physics_process(_delta):
 	else:
 		# Si el jugador no realiza ningun movimiento utilizar sprite normal
 		# y reproducir animacion del personaje parado
+		steps_sound.stop()
 		sprite.visible = true
 		spriteWalking.visible = false
 		animationPlayer.play("Idle")
@@ -89,3 +95,10 @@ func stop_player():
 func resume_player():
 	#print("Jugador Renaudado")
 	is_paused = false
+
+func play_steps():
+	#print($Timer.time_left)
+	if $Timer.time_left <= 0 or not steps_sound.playing:
+		steps_sound.pitch_scale = randf_range(0.8, 1.2)
+		steps_sound.play()
+		$Timer.start(5)

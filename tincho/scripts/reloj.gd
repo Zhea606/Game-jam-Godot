@@ -4,8 +4,6 @@ extends Control
 @onready var minutes = $CanvasLayer/minute_arrow
 @onready var hours = $CanvasLayer/hour_arrow
 
-@onready var puzzle_data = PuzzleData.new("res://savedata/puzzles_data.json")
-
 var solved = false
 
 @onready var unlock_sound = $unlock
@@ -24,7 +22,7 @@ func _process(delta):
 		$CanvasLayer/Solved.visible = true
 		solved = true
 		# Guardar estado de puzzle
-		puzzle_data.update_puzzle("1954",true)
+		GLOBAL.puzzle_1954 = true
 	#print(int(hours.rotation_degrees))
 
 # En caso de presionar aguja de minutos, rotar 30 grados

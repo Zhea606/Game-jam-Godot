@@ -17,11 +17,7 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
-
-[editor_plugins]
-
-enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg")
+GLOBAL="*res://scripts/global.gd"
 
 [input]
 
