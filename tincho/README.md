@@ -27,6 +27,10 @@
   - [Herencia](#herencia)
 * [Puzzles](#puzzles)
   - [Guardar datos en formato JSON](#guardar-datos-en-formato-json)
+  - [Guardar datos con Autoloads](#guardar-datos-con-autoloads)
+* [Sonidos](#sonidos)
+  - [Música de fondo](#música-de-fondo)
+  - [Efectos de sonido](#efectos-de-sonido)
 
 
 
